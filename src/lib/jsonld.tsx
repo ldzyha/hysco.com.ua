@@ -14,7 +14,12 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/og-image.jpg`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/og-image.jpg`,
+      width: 1200,
+      height: 630,
+    },
     description: 'Hyper електросамокати - найпотужніші серійні самокати у світі',
     contactPoint: {
       '@type': 'ContactPoint',
@@ -32,11 +37,6 @@ export function generateWebSiteSchema() {
     '@type': 'WebSite',
     name: SITE_NAME,
     url: SITE_URL,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE_URL}/search?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 

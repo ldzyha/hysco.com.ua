@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { FloatingContactButton, CookieBanner } from "@/components/ui";
+import dynamic from "next/dynamic";
+import { Geist } from "next/font/google";
 import { PageWrapper } from "@/components/layout/PageWrapper";
-import { CartProvider } from "@/context/CartContext";
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
@@ -11,15 +10,16 @@ import {
 } from "@/lib/jsonld";
 import "./globals.css";
 
+const FloatingContactButton = dynamic(
+  () => import("@/components/ui/FloatingContactButton")
+);
+const CookieBanner = dynamic(
+  () => import("@/components/ui/CookieBanner")
+);
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin", "latin-ext"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
   display: "swap",
 });
 
@@ -103,14 +103,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <CartProvider>
-          <PageWrapper>{children}</PageWrapper>
-          <FloatingContactButton />
-          <CookieBanner />
-        </CartProvider>
+      <body className={`${geistSans.variable} antialiased`}>
+        <a href="#main-content" className="skip-to-content">
+          Перейти до основного вмісту
+        </a>
+        <PageWrapper>{children}</PageWrapper>
+        <FloatingContactButton />
+        <CookieBanner />
       </body>
     </html>
   );

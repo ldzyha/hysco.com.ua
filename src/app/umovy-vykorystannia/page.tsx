@@ -4,6 +4,14 @@ import { MetallicText } from '@/components/ui';
 export const metadata: Metadata = {
   title: 'Умови використання',
   description: 'Умови використання сайту HYSCO.',
+  alternates: { canonical: '/umovy-vykorystannia/' },
+  openGraph: {
+    type: 'website',
+    url: '/umovy-vykorystannia/',
+    siteName: 'HYSCO',
+    title: 'Умови використання | HYSCO',
+    description: 'Умови використання сайту HYSCO.',
+  },
 };
 
 export default function TermsPage() {

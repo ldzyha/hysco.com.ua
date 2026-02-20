@@ -55,12 +55,12 @@ export interface FooterProps {
 
 const socialIcons: Record<string, ReactNode> = {
   telegram: (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
       <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
     </svg>
   ),
   youtube: (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
       <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
     </svg>
   ),
@@ -148,15 +148,21 @@ export function Footer({
           {/* Navigation */}
           {navigation?.map((column) => {
             const isExpanded = expandedSections.has(column.title);
+            const sectionId = `footer-nav-${column.title.replace(/\s+/g, '-')}`;
             return (
-              <nav key={column.title} className={styles.navSection}>
-                <button className={styles.navTitleButton} onClick={() => toggleSection(column.title)}>
+              <nav key={column.title} className={styles.navSection} aria-label={column.title}>
+                <button
+                  className={styles.navTitleButton}
+                  onClick={() => toggleSection(column.title)}
+                  aria-expanded={isExpanded}
+                  aria-controls={sectionId}
+                >
                   <h3 className={styles.navTitle}><MetallicText variant="silver">{column.title}</MetallicText></h3>
                   <span className={`${styles.accordionIcon} ${isExpanded ? styles.expanded : ''}`}>
                     <Icon name="chevronDown" size="sm" />
                   </span>
                 </button>
-                <ul className={`${styles.navList} ${isExpanded ? styles.navListExpanded : ''}`}>
+                <ul id={sectionId} className={`${styles.navList} ${isExpanded ? styles.navListExpanded : ''}`}>
                   {column.items.map((item) => (
                     <li key={item.href}>
                       <a href={item.href} className={styles.navLink}>
@@ -173,13 +179,18 @@ export function Footer({
           {/* Contacts */}
           {contacts && (
             <div className={styles.contactSection}>
-              <button className={styles.navTitleButton} onClick={() => toggleSection('Контакти')}>
+              <button
+                className={styles.navTitleButton}
+                onClick={() => toggleSection('Контакти')}
+                aria-expanded={expandedSections.has('Контакти')}
+                aria-controls="footer-contacts"
+              >
                 <h3 className={styles.navTitle}><MetallicText variant="silver">Контакти</MetallicText></h3>
                 <span className={`${styles.accordionIcon} ${expandedSections.has('Контакти') ? styles.expanded : ''}`}>
                   <Icon name="chevronDown" size="sm" />
                 </span>
               </button>
-              <div className={`${styles.contactList} ${expandedSections.has('Контакти') ? styles.contactListExpanded : ''}`}>
+              <div id="footer-contacts" className={`${styles.contactList} ${expandedSections.has('Контакти') ? styles.contactListExpanded : ''}`}>
                 {contacts.map((item, i) => (
                   <div key={i} className={styles.contactItem}>
                     <Icon name={item.icon} size="sm" metallic="blue" />

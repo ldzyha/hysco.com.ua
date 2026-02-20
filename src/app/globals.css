@@ -12,7 +12,7 @@
   --silver: #c0c0c0;
   --silver-light: #e8e8e8;
 
-  --platinum-dark: #4a4a4a;
+  --platinum-dark: #6a6a6a;
   --platinum: #7a7a7a;
   --platinum-light: #a8a8a8;
 
@@ -35,7 +35,7 @@
   --error: #ef4444;
   --warning: #f59e0b;
 
-  --gradient-brand: linear-gradient(90deg, #ff4444 0%, #ff8800 25%, #ffcc00 50%, #ff8800 75%, #ff4444 100%);
+  --gradient-brand: linear-gradient(90deg, #ff5555 0%, #ff9900 25%, #ffcc00 50%, #ff9900 75%, #ff5555 100%);
   --gradient-silver: linear-gradient(135deg, var(--silver-dark) 0%, var(--silver) 50%, var(--silver-light) 100%);
   --gradient-blue-metal: linear-gradient(135deg, var(--blue-metal-dark) 0%, var(--blue-metal) 50%, var(--blue-metal-light) 100%);
   --gradient-gold-metal: linear-gradient(135deg, var(--gold-metal-dark) 0%, var(--gold-metal) 50%, var(--gold-metal-light) 100%);
@@ -65,11 +65,13 @@
   --color-error: var(--error);
   --color-warning: var(--warning);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-html {
-  scroll-behavior: smooth;
+/* Smooth scroll only for users who haven't opted out */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -87,15 +89,64 @@ main {
   flex: 1;
 }
 
-/* Metallic text gradients */
-.text-gradient-brand {
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ===== FOCUS STYLES ===== */
+:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
 }
 
-/* Button styles */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ===== SCREEN READER ONLY ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ===== SKIP TO CONTENT ===== */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 24px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ===== BUTTON STYLES ===== */
 .btn-primary {
   background: var(--gradient-brand);
   color: white;
@@ -104,46 +155,35 @@ main {
   letter-spacing: 0.05em;
   padding: 0.875rem 2rem;
   border-radius: 9999px;
-  transition: all 0.3s ease;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
-.btn-primary:hover {
-  box-shadow: var(--glow-brand);
-  transform: translateY(-2px);
-}
-
-/* Card styles */
-.card-surface {
-  background: var(--surface);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Animations */
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 68, 68, 0.3), 0 0 20px rgba(255, 204, 0, 0.2);
+@media (prefers-reduced-motion: no-preference) {
+  .btn-primary {
+    transition: all 0.3s ease;
   }
-  50% {
-    box-shadow: 0 0 40px rgba(255, 68, 68, 0.4), 0 0 40px rgba(255, 204, 0, 0.3);
+  .btn-primary:hover {
+    box-shadow: var(--glow-brand);
+    transform: translateY(-2px);
   }
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-.animate-shimmer {
-  background-size: 200% auto;
-  animation: shimmer 3s linear infinite;
+/* ===== BROKEN IMAGE FALLBACK ===== */
+img {
+  color: var(--foreground-muted);
 }

@@ -1,5 +1,3 @@
-'use client';
-
 import { formatUAH, formatUSD } from '@/lib/currency';
 
 export interface PriceProps {
@@ -29,18 +27,19 @@ export function Price({
     <div className={className} style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
       <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
         <span style={{ fontSize: sizes.main, fontWeight: 700, color: 'var(--foreground)' }}>
+          <span className="sr-only">Ціна: </span>
           {formatUAH(usdCents)}
         </span>
         {originalUsdCents && originalUsdCents > usdCents && (
-          <span
+          <del
             style={{
               fontSize: sizes.secondary,
               color: 'var(--foreground-muted)',
-              textDecoration: 'line-through',
             }}
           >
+            <span className="sr-only">Стара ціна: </span>
             {formatUAH(originalUsdCents)}
-          </span>
+          </del>
         )}
       </div>
       {showUsd && (

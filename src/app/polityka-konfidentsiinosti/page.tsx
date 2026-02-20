@@ -4,6 +4,14 @@ import { MetallicText } from '@/components/ui';
 export const metadata: Metadata = {
   title: 'Політика конфіденційності',
   description: 'Політика конфіденційності HYSCO. Як ми збираємо та захищаємо ваші персональні дані.',
+  alternates: { canonical: '/polityka-konfidentsiinosti/' },
+  openGraph: {
+    type: 'website',
+    url: '/polityka-konfidentsiinosti/',
+    siteName: 'HYSCO',
+    title: 'Політика конфіденційності | HYSCO',
+    description: 'Політика конфіденційності HYSCO. Як ми збираємо та захищаємо ваші персональні дані.',
+  },
 };
 
 export default function PrivacyPage() {

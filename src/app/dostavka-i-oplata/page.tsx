@@ -4,6 +4,14 @@ import { MetallicText, Icon } from '@/components/ui';
 export const metadata: Metadata = {
   title: 'Доставка та оплата',
   description: 'Доставка електросамокатів по всій Україні Новою Поштою. Оплата при отриманні.',
+  alternates: { canonical: '/dostavka-i-oplata/' },
+  openGraph: {
+    type: 'website',
+    url: '/dostavka-i-oplata/',
+    siteName: 'HYSCO',
+    title: 'Доставка та оплата | HYSCO',
+    description: 'Доставка електросамокатів по всій Україні Новою Поштою. Оплата при отриманні.',
+  },
 };
 
 export default function DeliveryPage() {

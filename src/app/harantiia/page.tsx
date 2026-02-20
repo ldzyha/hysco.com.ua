@@ -4,6 +4,14 @@ import { MetallicText, Icon } from '@/components/ui';
 export const metadata: Metadata = {
   title: 'Гарантія',
   description: 'Гарантія 6 місяців на всі електросамокати. Умови гарантійного обслуговування.',
+  alternates: { canonical: '/harantiia/' },
+  openGraph: {
+    type: 'website',
+    url: '/harantiia/',
+    siteName: 'HYSCO',
+    title: 'Гарантія | HYSCO',
+    description: 'Гарантія 6 місяців на всі електросамокати. Умови гарантійного обслуговування.',
+  },
 };
 
 export default function WarrantyPage() {

@@ -2,11 +2,55 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { MetallicText, MetallicButton, Icon, Price, ProductTile } from '@/components/ui';
+import { MetallicText, Icon, Price, ProductTile } from '@/components/ui';
+import { metallic, type MetallicVariant } from '@/lib/metallic';
 import { getAllProductSlugsAsync, getProductBySlugAsync, getSimilarProducts, productToTileData } from '@/lib/products';
 import { generateProductSchema } from '@/lib/jsonld';
 import { productVideos } from '@/types/product';
 import styles from './page.module.css';
+import type { CSSProperties } from 'react';
+
+function CTALink({
+  href,
+  variant = 'blue',
+  size = 'lg',
+  external = false,
+  children,
+}: {
+  href: string;
+  variant?: MetallicVariant;
+  size?: 'sm' | 'md' | 'lg';
+  external?: boolean;
+  children: React.ReactNode;
+}) {
+  const sizeStyles: Record<string, CSSProperties> = {
+    sm: { padding: '8px 16px', fontSize: '13px' },
+    md: { padding: '12px 24px', fontSize: '14px' },
+    lg: { padding: '16px 32px', fontSize: '16px' },
+  };
+  return (
+    <a
+      href={href}
+      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      style={{
+        background: metallic[variant],
+        color: variant === 'gold' || variant === 'brandText' ? '#121212' : '#ffffff',
+        border: 'none',
+        borderRadius: '9999px',
+        fontWeight: 600,
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '8px',
+        textDecoration: 'none',
+        transition: 'all 0.2s ease',
+        ...sizeStyles[size],
+      }}
+    >
+      {children}
+    </a>
+  );
+}
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -27,11 +71,20 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     title: `${product.name} | Купити`,
     description: product.shortDescription || product.description,
     openGraph: {
+      type: 'website',
+      url: `/product/${slug}/`,
+      siteName: 'HYSCO',
       title: `${product.name} | HYSCO`,
       description: product.shortDescription || '',
       images: mainImage ? [{ url: mainImage.url, alt: product.name }] : [],
     },
-    alternates: { canonical: `/product/${slug}` },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} | HYSCO`,
+      description: product.shortDescription || '',
+      images: mainImage ? [mainImage.url] : [],
+    },
+    alternates: { canonical: `/product/${slug}/` },
   };
 }
 
@@ -50,6 +103,24 @@ export default async function ProductPage({ params }: ProductPageProps) {
     ? product.specs.motor.count * product.specs.motor.powerPerMotor
     : product.specs?.motor?.totalPower;
   const productJsonLd = generateProductSchema(product);
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Каталог',
+        item: 'https://hysco.com.ua/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: product.name,
+        item: `https://hysco.com.ua/product/${slug}/`,
+      },
+    ],
+  };
 
   return (
     <>
@@ -57,12 +128,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className={styles.page}>
         {/* Breadcrumb */}
-        <nav className={styles.breadcrumb}>
+        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
           <Link href="/">Каталог</Link>
           <Icon name="chevronRight" size="xs" color="var(--foreground-muted)" />
-          <span>{product.name}</span>
+          <span aria-current="page">{product.name}</span>
         </nav>
 
         {/* Product Main */}
@@ -139,18 +214,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             {/* CTA */}
             <div className={styles.cta}>
-              <a href="https://t.me/scootify_eco" target="_blank" rel="noopener noreferrer">
-                <MetallicButton variant="brandText" size="lg">
-                  <Icon name="telegram" size="sm" />
-                  Замовити в Telegram
-                </MetallicButton>
-              </a>
-              <a href="tel:+380772770006">
-                <MetallicButton variant="blue" size="lg">
-                  <Icon name="phone" size="sm" />
-                  Зателефонувати
-                </MetallicButton>
-              </a>
+              <CTALink href="https://t.me/scootify_eco" variant="brandText" size="lg" external>
+                <Icon name="telegram" size="sm" />
+                Замовити в Telegram
+              </CTALink>
+              <CTALink href="tel:+380772770006" variant="blue" size="lg">
+                <Icon name="phone" size="sm" />
+                Зателефонувати
+              </CTALink>
             </div>
 
             {/* Warranty & Shipping */}
@@ -197,6 +268,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     title={`${product.name} video`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    loading="lazy"
                     className={styles.iframe}
                   />
                 </div>

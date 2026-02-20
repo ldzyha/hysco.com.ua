@@ -8,37 +8,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
+      url: `${baseUrl}/`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },
     {
-      url: `${baseUrl}/dostavka-i-oplata`,
+      url: `${baseUrl}/dostavka-i-oplata/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/harantiia`,
+      url: `${baseUrl}/harantiia/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/polityka-konfidentsiinosti`,
+      url: `${baseUrl}/polityka-konfidentsiinosti/`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/umovy-vykorystannia`,
+      url: `${baseUrl}/umovy-vykorystannia/`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/cookies`,
+      url: `${baseUrl}/cookies/`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
@@ -47,7 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const products = await getAllProductsAsync();
   const productPages: MetadataRoute.Sitemap = products.map((product) => ({
-    url: `${baseUrl}/product/${product.slug}`,
+    url: `${baseUrl}/product/${product.slug}/`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9,

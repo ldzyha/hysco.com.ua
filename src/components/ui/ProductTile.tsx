@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { Price } from './Price';
@@ -38,18 +36,21 @@ export function ProductTile({ product, priority = false }: ProductTileProps) {
           {product.specs?.maxSpeed && (
             <span className={styles.spec}>
               <Icon name="lightning" size="xs" color="var(--secondary)" />
+              <span className="sr-only">Макс. швидкість: </span>
               {product.specs.maxSpeed} км/год
             </span>
           )}
           {product.specs?.range && (
             <span className={styles.spec}>
               <Icon name="mapPin" size="xs" color="var(--primary-light)" />
+              <span className="sr-only">Запас ходу: </span>
               {product.specs.range} км
             </span>
           )}
           {product.specs?.totalPower && (
             <span className={styles.spec}>
               <Icon name="lightning" size="xs" color="var(--gold-metal)" />
+              <span className="sr-only">Потужність: </span>
               {product.specs.totalPower}W
             </span>
           )}

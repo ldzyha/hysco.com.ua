@@ -1,9 +1,50 @@
 import Link from 'next/link';
-import { MetallicText, MetallicButton, Icon } from '@/components/ui';
+import { MetallicText, Icon } from '@/components/ui';
+import { metallic, type MetallicVariant } from '@/lib/metallic';
+import type { CSSProperties } from 'react';
+
+function LinkButton({
+  href,
+  variant = 'blue',
+  size = 'md',
+  children,
+}: {
+  href: string;
+  variant?: MetallicVariant;
+  size?: 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
+}) {
+  const sizeStyles: Record<string, CSSProperties> = {
+    sm: { padding: '8px 16px', fontSize: '13px' },
+    md: { padding: '12px 24px', fontSize: '14px' },
+    lg: { padding: '16px 32px', fontSize: '16px' },
+  };
+  return (
+    <Link
+      href={href}
+      style={{
+        background: metallic[variant],
+        color: variant === 'gold' || variant === 'brandText' ? '#121212' : '#ffffff',
+        border: 'none',
+        borderRadius: '9999px',
+        fontWeight: 600,
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '8px',
+        textDecoration: 'none',
+        transition: 'all 0.2s ease',
+        ...sizeStyles[size],
+      }}
+    >
+      {children}
+    </Link>
+  );
+}
 
 export default function NotFound() {
   return (
-    <main style={{ minHeight: '60vh', padding: '60px 16px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+    <div style={{ minHeight: '60vh', padding: '60px 16px', display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
       <div style={{ maxWidth: '600px', width: '100%', textAlign: 'center' }}>
         <div style={{ marginBottom: '16px' }}>
           <MetallicText variant="brandText" as="span" style={{ fontSize: '120px', fontWeight: 800, lineHeight: 1 }}>
@@ -19,12 +60,10 @@ export default function NotFound() {
           Схоже, ця сторінка переїхала або більше не існує. Поверніться до каталогу, щоб знайти потрібний самокат.
         </p>
 
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <MetallicButton variant="blue" size="md">
-            <Icon name="chevronLeft" size="sm" />
-            На головну
-          </MetallicButton>
-        </Link>
+        <LinkButton href="/" variant="blue" size="md">
+          <Icon name="chevronLeft" size="sm" />
+          На головну
+        </LinkButton>
 
         <div style={{ marginTop: '40px', padding: '24px', background: 'var(--surface)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)' }}>
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'center' }}>
@@ -40,6 +79,6 @@ export default function NotFound() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

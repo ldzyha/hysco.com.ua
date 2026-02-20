@@ -50,13 +50,6 @@ export function Header({
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  useEffect(() => {
-    document.documentElement.style.setProperty(
-      '--header-offset',
-      isVisible ? '60px' : '0px'
-    );
-  }, [isVisible]);
-
   return (
     <>
       <header
@@ -74,7 +67,7 @@ export function Header({
               </MetallicText>
             </Link>
 
-            <nav className={styles.nav}>
+            <nav className={styles.nav} aria-label="Головне меню">
               <Link href="/" className={styles.navLink}>Каталог</Link>
               <Link href="/dostavka-i-oplata" className={styles.navLink}>Доставка</Link>
               <Link href="/harantiia" className={styles.navLink}>Гарантія</Link>
