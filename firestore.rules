@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Products - public read
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Config (exchange rates, etc.) - public read
+    match /config/{configId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Orders - no direct access (managed by Cloud Functions)
+    match /orders/{orderId} {
+      allow read: if false;
+      allow write: if false;
+    }
+  }
+}

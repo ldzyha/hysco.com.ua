@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #ff4444;
+  --primary-dark: #cc2222;
+  --primary-light: #ff6666;
+  --secondary: #ffcc00;
+  --secondary-dark: #cc9900;
+  --secondary-light: #ffe066;
+
+  --silver-dark: #8a8a8a;
+  --silver: #c0c0c0;
+  --silver-light: #e8e8e8;
+
+  --platinum-dark: #4a4a4a;
+  --platinum: #7a7a7a;
+  --platinum-light: #a8a8a8;
+
+  --blue-metal-dark: #1a3a5c;
+  --blue-metal: #4a7eb8;
+  --blue-metal-light: #8bb8e8;
+
+  --gold-metal-dark: #8b7355;
+  --gold-metal: #d4af37;
+  --gold-metal-light: #f5e6a3;
+
+  --background: #0a0a0a;
+  --background-elevated: #141414;
+  --surface: #1a1a1a;
+  --surface-hover: #252525;
+  --foreground: #ffffff;
+  --foreground-muted: #a0a0a0;
+
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #f59e0b;
+
+  --gradient-brand: linear-gradient(90deg, #ff4444 0%, #ff8800 25%, #ffcc00 50%, #ff8800 75%, #ff4444 100%);
+  --gradient-silver: linear-gradient(135deg, var(--silver-dark) 0%, var(--silver) 50%, var(--silver-light) 100%);
+  --gradient-blue-metal: linear-gradient(135deg, var(--blue-metal-dark) 0%, var(--blue-metal) 50%, var(--blue-metal-light) 100%);
+  --gradient-gold-metal: linear-gradient(135deg, var(--gold-metal-dark) 0%, var(--gold-metal) 50%, var(--gold-metal-light) 100%);
+
+  --glow-primary: 0 0 20px rgba(255, 68, 68, 0.4);
+  --glow-secondary: 0 0 20px rgba(255, 204, 0, 0.4);
+  --glow-brand: 0 4px 30px rgba(255, 68, 68, 0.3), 0 4px 30px rgba(255, 204, 0, 0.2);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-secondary-light: var(--secondary-light);
+  --color-silver: var(--silver);
+  --color-silver-light: var(--silver-light);
+  --color-gold-metal: var(--gold-metal);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Metallic text gradients */
+.text-gradient-brand {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button styles */
+.btn-primary {
+  background: var(--gradient-brand);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  box-shadow: var(--glow-brand);
+  transform: translateY(-2px);
+}
+
+/* Card styles */
+.card-surface {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.3), 0 0 20px rgba(255, 204, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 68, 68, 0.4), 0 0 40px rgba(255, 204, 0, 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}

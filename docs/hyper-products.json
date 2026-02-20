@@ -1,0 +1,276 @@
+{
+  "products": [
+    {
+      "id": "hyper-teverun-fighter-mini",
+      "sku": "HYP-TFM-001",
+      "slug": "teverun-fighter-mini",
+      "name": "Teverun Fighter Mini",
+      "brand": "Teverun",
+      "model": "Fighter Mini",
+      "series": "teverun",
+      "categoryId": "hyper",
+      "shortDescription": "Компактний потужний самокат з двигуном 2000W та батареєю 60V",
+      "description": "Teverun Fighter Mini — компактний, але потужний електросамокат для міста та приміських маршрутів. Максимальна швидкість 65 км/год, запас ходу до 80 км. Підтримка APP та Smart BMS для повного контролю.",
+      "priceUsdCents": 160000,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/teverun-fighter-mini.webp", "alt": "Teverun Fighter Mini", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 65, "range": 80 },
+        "motor": { "powerPerMotor": 1000, "count": 2, "type": "hub" },
+        "battery": { "voltage": 60, "voltageMin": 52, "capacity": 25, "capacityMin": 15 },
+        "features": { "app": true }
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.5, "count": 23 }
+    },
+    {
+      "id": "hyper-teverun-blade-gt2",
+      "sku": "HYP-TBG-001",
+      "slug": "teverun-blade-gt2",
+      "name": "Teverun Blade GT 2+",
+      "brand": "Teverun",
+      "model": "Blade GT 2+",
+      "series": "teverun",
+      "categoryId": "hyper",
+      "shortDescription": "Потужний самокат 4900W для швидкої їзди до 85 км/год",
+      "description": "Teverun Blade GT 2+ — серйозний апарат для тих, хто шукає швидкість та потужність. Двигун 4900W, батарея до 35Ah, максимальна швидкість 85 км/год. APP та Smart BMS в комплекті.",
+      "priceUsdCents": 200000,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/teverun-blade-gt2.webp", "alt": "Teverun Blade GT 2+", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 85, "range": 80 },
+        "motor": { "powerPerMotor": 2450, "count": 2, "type": "hub" },
+        "battery": { "voltage": 60, "capacity": 35, "capacityMin": 26 },
+        "features": { "app": true }
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.6, "count": 18 }
+    },
+    {
+      "id": "hyper-teverun-supreme-ultra",
+      "sku": "HYP-TSU-001",
+      "slug": "teverun-supreme-ultra",
+      "name": "Teverun Supreme Ultra 7260",
+      "brand": "Teverun",
+      "model": "Supreme Ultra 7260",
+      "series": "teverun",
+      "categoryId": "hyper",
+      "shortDescription": "Ультра-потужний самокат 10000W з батареєю 72V 60Ah та запасом ходу 200 км",
+      "description": "Teverun Supreme Ultra 7260 — флагман серії Supreme. 10000W потужності, батарея 72V 60Ah, запас ходу до 200 км. Оснащений Smart BMS, APP, PKE, NFC та GPS для максимального комфорту та безпеки.",
+      "priceUsdCents": 380000,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/teverun-supreme-ultra.webp", "alt": "Teverun Supreme Ultra 7260", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 107, "range": 200 },
+        "motor": { "powerPerMotor": 5000, "count": 2, "type": "hub" },
+        "battery": { "voltage": 72, "capacity": 60 },
+        "features": { "app": true, "nfc": true }
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.8, "count": 12 }
+    },
+    {
+      "id": "hyper-teverun-supreme-7260r",
+      "sku": "HYP-TS7-001",
+      "slug": "teverun-supreme-7260r",
+      "name": "Teverun Supreme 7260R V4",
+      "brand": "Teverun",
+      "model": "Supreme 7260R V4",
+      "series": "teverun",
+      "categoryId": "hyper",
+      "shortDescription": "Найпотужніший серійний самокат — 15000W, швидкість 120 км/год",
+      "description": "Teverun Supreme 7260R V4 — найпотужніший серійний електросамокат у світі. 15000W потужності, максимальна швидкість 120 км/год, батарея 72V 60Ah. Smart BMS, APP, PKE, NFC, GPS — повний набір технологій.",
+      "priceUsdCents": 430000,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/teverun-supreme-7260r.webp", "alt": "Teverun Supreme 7260R V4", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 120, "range": 180 },
+        "motor": { "powerPerMotor": 7500, "count": 2, "type": "hub" },
+        "battery": { "voltage": 72, "capacity": 60 },
+        "features": { "app": true, "nfc": true }
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.9, "count": 8 }
+    },
+    {
+      "id": "hyper-inmotion-rs",
+      "sku": "HYP-IRS-001",
+      "slug": "inmotion-rs",
+      "name": "Inmotion RS",
+      "brand": "Inmotion",
+      "model": "RS",
+      "series": "premium",
+      "categoryId": "hyper",
+      "shortDescription": "Преміальний самокат з IPX6/IPX7 захистом та регулюванням кліренсу",
+      "description": "Inmotion RS — преміальний електросамокат з найкращим водозахистом IPX6/IPX7 в класі. Регулювання кліренсу, Smart BMS, потужний двигун 8400W. Батарея 72V 40Ah забезпечує запас ходу до 120 км.",
+      "priceUsdCents": 420000,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/inmotion-rs.webp", "alt": "Inmotion RS", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 105, "range": 120 },
+        "motor": { "powerPerMotor": 4200, "count": 2, "type": "hub" },
+        "battery": { "voltage": 72, "capacity": 40, "waterRating": "IPX7" },
+        "safety": { "waterRating": "IPX6" },
+        "features": { "app": true }
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.7, "count": 15 }
+    },
+    {
+      "id": "hyper-nami-burn-e3-max",
+      "sku": "HYP-NBE-001",
+      "slug": "nami-burn-e3-max",
+      "name": "Nami Burn-E 3 Max",
+      "brand": "Nami",
+      "model": "Burn-E 3 Max",
+      "series": "premium",
+      "categoryId": "hyper",
+      "shortDescription": "Комфортний потужний самокат з великим дисплеєм та м'якою підвіскою",
+      "description": "Nami Burn-E 3 Max — ідеальний баланс потужності та комфорту. Великий дисплей для зручного управління, м'яка підвіска для комфортної їзди. 8400W потужності, батарея 72V 40Ah, запас ходу 120 км.",
+      "priceUsdCents": 399900,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/nami-burn-e3-max.webp", "alt": "Nami Burn-E 3 Max", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 100, "range": 120 },
+        "motor": { "powerPerMotor": 4200, "count": 2, "type": "hub" },
+        "battery": { "voltage": 72, "capacity": 40 },
+        "safety": { "suspensionFront": "hydraulic", "suspensionRear": "hydraulic" },
+        "features": { "display": true }
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.6, "count": 20 }
+    },
+    {
+      "id": "hyper-mars-gtr-xtr",
+      "sku": "HYP-MGX-001",
+      "slug": "mars-gtr-xtr",
+      "name": "Mars GTR / Teewing XTR",
+      "brand": "Mars",
+      "model": "GTR / Teewing XTR",
+      "series": "extreme",
+      "categoryId": "hyper",
+      "shortDescription": "Мотоциклетна вилка, вбудований пожежогасник, порт під інвертор",
+      "description": "Mars GTR / Teewing XTR — самокат з мотоциклетною вилкою для максимальної стабільності. Унікальні особливості: вбудований пожежогасник та порт під інвертор. 9000W потужності, батарея до 45Ah.",
+      "priceUsdCents": 400000,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/mars-gtr-xtr.webp", "alt": "Mars GTR / Teewing XTR", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 107, "range": 110 },
+        "motor": { "powerPerMotor": 4500, "count": 2, "type": "hub" },
+        "battery": { "voltage": 72, "capacity": 45, "capacityMin": 35 },
+        "features": {}
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.5, "count": 10 }
+    },
+    {
+      "id": "hyper-kaabo-wolf-king-gtr",
+      "sku": "HYP-KWK-001",
+      "slug": "kaabo-wolf-king-gtr",
+      "name": "Kaabo Wolf King GTR / GTR MAX",
+      "brand": "Kaabo",
+      "model": "Wolf King GTR",
+      "series": "extreme",
+      "categoryId": "hyper",
+      "shortDescription": "Мотоциклетна вилка та великий дисплей для повного контролю",
+      "description": "Kaabo Wolf King GTR / GTR MAX — легендарний самокат з мотоциклетною вилкою та великим дисплеєм. Батарея 72V до 45Ah, максимальна швидкість 100 км/год. Ідеальний для далеких поїздок.",
+      "priceUsdCents": 370000,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/kaabo-wolf-king-gtr.webp", "alt": "Kaabo Wolf King GTR", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 100, "range": 100 },
+        "motor": { "count": 2, "type": "hub" },
+        "battery": { "voltage": 72, "capacity": 45, "capacityMin": 35 },
+        "features": { "display": true }
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.4, "count": 22 }
+    },
+    {
+      "id": "hyper-surron-light-bee",
+      "sku": "HYP-SLB-001",
+      "slug": "surron-light-bee",
+      "name": "Surron Light Bee 2025",
+      "brand": "Surron",
+      "model": "Light Bee 2025",
+      "series": "offroad",
+      "categoryId": "hyper",
+      "shortDescription": "Електробайк для бездоріжжя з потужністю 8000W",
+      "description": "Surron Light Bee 2025 — електробайк для бездоріжжя. 8000W потужності, батарея 72V 40Ah, максимальна швидкість 80 км/год. Створений для пригод поза дорогами.",
+      "priceUsdCents": 399900,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/surron-light-bee.webp", "alt": "Surron Light Bee 2025", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 80, "range": 90 },
+        "motor": { "powerPerMotor": 8000, "count": 1, "type": "chain" },
+        "battery": { "voltage": 72, "capacity": 40 },
+        "features": {}
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.7, "count": 14 }
+    },
+    {
+      "id": "hyper-nanrobot-ls7",
+      "sku": "HYP-NLS-001",
+      "slug": "nanrobot-ls7",
+      "name": "Nanrobot LS7+",
+      "brand": "Nanrobot",
+      "model": "LS7+",
+      "series": "extreme",
+      "categoryId": "hyper",
+      "shortDescription": "Потужний самокат 7000W зі швидкістю 100 км/год та запасом 100 км",
+      "description": "Nanrobot LS7+ — потужний та надійний електросамокат. 7000W потужності, батарея 72V 35Ah, максимальна швидкість 100 км/год. Солідний запас ходу до 100 км для тривалих поїздок.",
+      "priceUsdCents": 340000,
+      "inStock": true,
+      "shippingDays": 14,
+      "preorder": true,
+      "images": [
+        { "url": "/products/hyper/nanrobot-ls7.webp", "alt": "Nanrobot LS7+", "isMain": true }
+      ],
+      "specs": {
+        "performance": { "maxSpeed": 100, "range": 100 },
+        "motor": { "powerPerMotor": 3500, "count": 2, "type": "hub" },
+        "battery": { "voltage": 72, "capacity": 35 },
+        "features": {}
+      },
+      "warranty": { "months": 6 },
+      "rating": { "average": 4.3, "count": 16 }
+    }
+  ]
+}
