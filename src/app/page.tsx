@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { MetallicText, ProductTile } from '@/components/ui';
 import { getAllProductsAsync, productToTileData, getProductsBySeries, getSeriesInOrder } from '@/lib/products';
+import { initExchangeRate } from '@/lib/currency';
 import {
   generateWebPageSchema,
   generateItemListSchema,
@@ -9,20 +10,21 @@ import {
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'HYSCO | Hyper електросамокати - найпотужніші в Україні',
-  description: 'Hyper електросамокати від $1600 до $4300. Потужність до 15000W, швидкість до 120 км/год. Teverun, Inmotion, Nami, Kaabo, Mars. Доставка по Україні.',
+  title: 'HYSCO | Флагманські електросамокати — лише топ-конфігурації',
+  description: 'Лише флагмани: Teverun, Inmotion, Nami, Kaabo, Tiger, Mars, Surron. Потужність до 15000W, швидкість до 120 км/год. Консультація та підбір найкращого електросамоката в Україні.',
   alternates: { canonical: '/' },
 };
 
 export default async function HomePage() {
+  await initExchangeRate();
   const allProducts = await getAllProductsAsync();
   const productsBySeries = getProductsBySeries();
   const seriesInOrder = getSeriesInOrder();
 
   const homePageJsonLd = combineSchemas(
     generateWebPageSchema({
-      title: 'HYSCO | Hyper електросамокати',
-      description: 'Hyper електросамокати від $1600 до $4300. Потужність до 15000W, швидкість до 120 км/год.',
+      title: 'HYSCO | Флагманські електросамокати',
+      description: 'Лише флагмани: Teverun, Inmotion, Nami, Kaabo, Tiger, Mars, Surron. Потужність до 15000W, швидкість до 120 км/год.',
       path: '/',
     }),
     generateItemListSchema(
@@ -32,7 +34,7 @@ export default async function HomePage() {
         thumbnail: p.images.find((img) => img.isMain)?.url || p.images[0]?.url || '/placeholder.webp',
         priceUsdCents: p.priceUsdCents,
       })),
-      'Hyper електросамокати',
+      'Флагманські електросамокати',
       '/'
     )
   );
@@ -47,7 +49,7 @@ export default async function HomePage() {
         {/* Hero */}
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <div className={styles.heroBadge}>HYPER E-SCOOTERS 2025</div>
+            <div className={styles.heroBadge}>HYPER E-SCOOTERS 2026</div>
             <h1 className={styles.heroTitle}>
               <MetallicText variant="silver" as="span">ПОТУЖНІСТЬ.</MetallicText>
               <br />
@@ -56,8 +58,8 @@ export default async function HomePage() {
               <MetallicText variant="brandText" as="span">СВОБОДА.</MetallicText>
             </h1>
             <p className={styles.heroSubtitle}>
-              Найпотужніші серійні електросамокати у світі. Від 2000W до 15000W.
-              Швидкість до 120 км/год. Запас ходу до 200 км. Доставка по всій Україні.
+              Лише флагмани — топова конфігурація кожного бренду. Teverun, Inmotion, Nami, Kaabo, Tiger, Mars, Surron.
+              Консультація та підбір. Ціни орієнтовні, доставка по всій Україні.
             </p>
             <div className={styles.heroStats}>
               <div className={styles.stat}>

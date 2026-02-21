@@ -125,21 +125,27 @@ export interface SeriesConfig {
 const seriesConfigs: SeriesConfig[] = [
   {
     id: 'teverun',
-    name: 'Teverun Series',
-    description: 'Від компактного Fighter Mini до найпотужнішого Supreme 7260R V4',
+    name: 'Teverun',
+    description: 'Найпотужніші серійні самокати у світі — Supreme 7260R V4 та Supreme Ultra',
     badge: 'TEVERUN',
   },
   {
     id: 'premium',
-    name: 'Premium Class',
-    description: 'Преміальні електросамокати від Inmotion та Nami',
+    name: 'Premium',
+    description: 'Inmotion та Nami — еталони якості, комфорту та інженерії',
     badge: 'PREMIUM',
   },
   {
     id: 'extreme',
-    name: 'Extreme Performance',
-    description: 'Мотоциклетні вилки, максимальна потужність та швидкість',
+    name: 'Extreme',
+    description: 'Мотоциклетні вилки та максимальна потужність — Mars та Kaabo',
     badge: 'EXTREME',
+  },
+  {
+    id: 'tiger',
+    name: 'Tiger',
+    description: 'IPX7 захист, безкамерні шини, преміум інженерія',
+    badge: 'TIGER',
   },
   {
     id: 'offroad',

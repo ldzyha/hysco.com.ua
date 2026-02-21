@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "hysco-com-ua",
+    "site": "hysco-ua",
     "public": "out",
     "ignore": [
       "firebase.json",

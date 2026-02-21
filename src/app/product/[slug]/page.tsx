@@ -7,6 +7,7 @@ import { metallic, type MetallicVariant } from '@/lib/metallic';
 import { getAllProductSlugsAsync, getProductBySlugAsync, getSimilarProducts, productToTileData } from '@/lib/products';
 import { generateProductSchema } from '@/lib/jsonld';
 import { productVideos } from '@/types/product';
+import { initExchangeRate } from '@/lib/currency';
 import styles from './page.module.css';
 import type { CSSProperties } from 'react';
 
@@ -89,6 +90,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
+  await initExchangeRate();
   const { slug } = await params;
   const product = await getProductBySlugAsync(slug);
 

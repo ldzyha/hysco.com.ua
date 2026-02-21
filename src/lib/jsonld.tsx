@@ -3,7 +3,7 @@
  */
 
 import type { Product } from '@/types/product';
-// Currency formatting used for schema.org
+import { getExchangeRate } from '@/lib/currency';
 
 const SITE_URL = 'https://hysco.com.ua';
 const SITE_NAME = 'HYSCO';
@@ -78,8 +78,8 @@ export function generateProductSchema(product: Product) {
     offers: {
       '@type': 'Offer',
       url: `${SITE_URL}/product/${product.slug}`,
-      priceCurrency: 'USD',
-      price: (product.priceUsdCents / 100).toFixed(2),
+      priceCurrency: 'UAH',
+      price: Math.round((product.priceUsdCents / 100) * getExchangeRate()).toFixed(2),
       availability: product.inStock
         ? 'https://schema.org/InStock'
         : 'https://schema.org/PreOrder',
@@ -140,8 +140,8 @@ export function generateItemListSchema(
         image: `${SITE_URL}${item.thumbnail}`,
         offers: {
           '@type': 'Offer',
-          priceCurrency: 'USD',
-          price: (item.priceUsdCents / 100).toFixed(2),
+          priceCurrency: 'UAH',
+          price: Math.round((item.priceUsdCents / 100) * getExchangeRate()).toFixed(2),
         },
       },
     })),

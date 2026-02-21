@@ -11,10 +11,10 @@ import {
 import "./globals.css";
 
 const FloatingContactButton = dynamic(
-  () => import("@/components/ui/FloatingContactButton")
+  () => import("@/components/ui").then((mod) => ({ default: mod.FloatingContactButton }))
 );
 const CookieBanner = dynamic(
-  () => import("@/components/ui/CookieBanner")
+  () => import("@/components/ui").then((mod) => ({ default: mod.CookieBanner }))
 );
 
 const geistSans = Geist({

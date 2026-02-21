@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { Icon } from '@/components/ui/Icon';
-import { MetallicText } from '@/components/ui/MetallicText';
+import { Icon, MetallicText } from '@/components/ui';
 import styles from './Header.module.css';
 
 export interface HeaderProps {

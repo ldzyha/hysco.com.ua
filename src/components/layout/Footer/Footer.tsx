@@ -1,8 +1,7 @@
 'use client';
 
 import { ReactNode, useState } from 'react';
-import { MetallicText, Icon } from '@/components/ui';
-import type { IconName } from '@/components/ui/Icon';
+import { MetallicText, Icon, type IconName } from '@/components/ui';
 import styles from './Footer.module.css';
 
 export interface FooterNavItem {

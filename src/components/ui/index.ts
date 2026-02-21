@@ -1,8 +1,21 @@
-export { Icon, type IconName, type IconProps, iconNames } from './Icon';
-export { MetallicText, type MetallicTextProps } from './MetallicText';
-export { MetallicButton, type MetallicButtonProps } from './MetallicButton';
-export { MetallicCard, type MetallicCardProps } from './MetallicCard';
-export { Price, type PriceProps } from './Price';
-export { ProductTile, type ProductTileProps } from './ProductTile';
-export { FloatingContactButton } from './FloatingContactButton';
-export { CookieBanner } from './CookieBanner';
+// Re-export shared library components
+export {
+  Icon,
+  type IconName,
+  type IconProps,
+  iconNames,
+  MetallicText,
+  type MetallicTextProps,
+  MetallicButton,
+  type MetallicButtonProps,
+  MetallicCard,
+  type MetallicCardProps,
+  Price,
+  type PriceProps,
+  ProductTile,
+  type ProductTileProps,
+  FloatingContactButton,
+  type FloatingContactButtonProps,
+  CookieBanner,
+  type CookieBannerProps,
+} from '@scootify/shared/components';

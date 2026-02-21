@@ -140,12 +140,6 @@ export interface ProductVideo {
 }
 
 export const productVideos: Record<string, ProductVideo[]> = {
-  'teverun-fighter-mini': [
-    { id: 'l0KBUOLNXro', type: 'youtube' },
-  ],
-  'teverun-blade-gt2': [
-    { id: 'saKVtrron6k', type: 'youtube' },
-  ],
   'teverun-supreme-7260r': [
     { id: 'o4bSzShXnhY', type: 'youtube' },
   ],
@@ -155,8 +149,8 @@ export const productVideos: Record<string, ProductVideo[]> = {
   'inmotion-rs': [
     { id: '9IcBwUWQQog', type: 'youtube' },
   ],
-  'nami-burn-e3-max': [
-    { id: 'XTse9W99-eo', type: 'youtube' },
+  'nami-burn-e-max': [
+    { id: 'yoYfhevyPtI', type: 'youtube' },
   ],
   'mars-gtr-xtr': [
     { id: 'l-1Ww2ZH4-E', type: 'youtube' },
@@ -164,10 +158,13 @@ export const productVideos: Record<string, ProductVideo[]> = {
   'kaabo-wolf-king-gtr': [
     { id: 'qTD2sbwvLXY', type: 'youtube' },
   ],
-  'surron-light-bee': [
-    { id: 'FObf6zx3fkw', type: 'youtube' },
+  'tiger-king-rs': [
+    { id: 'F5Q64P4nvt0', type: 'youtube' },
   ],
-  'nanrobot-ls7': [
-    { id: 'PMsx8QZJ6RY', type: 'youtube' },
+  'tiger-supra-pro': [
+    { id: 'LTRlHErCGGU', type: 'youtube' },
+  ],
+  'surron-light-bee': [
+    { id: 'fu8usBL9kPk', type: 'youtube' },
   ],
 };
