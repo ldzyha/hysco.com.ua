@@ -4,7 +4,7 @@ import type {
   FooterSocialLink,
   FooterFeature,
   FooterLegalLink,
-} from '@/components/layout/Footer';
+} from '@scootify/shared/components';
 
 export const footerNavigation: FooterNavColumn[] = [
   {
@@ -27,11 +27,7 @@ export const footerNavigation: FooterNavColumn[] = [
 
 export const footerContacts: FooterContactItem[] = [
   { icon: 'phone', label: '+38 077 277 00 06', href: 'tel:+380772770006' },
-  { icon: 'mail', label: 'leonid@dzyha.com', href: 'mailto:leonid@dzyha.com' },
-  { icon: 'telegram', label: '@scooti_bot', href: 'https://t.me/scooti_bot' },
   { icon: 'telegram', label: '@ldzyha', href: 'https://t.me/ldzyha' },
-  { icon: 'telegram', label: '@scootify_eco', href: 'https://t.me/scootify_eco' },
-  { icon: 'globe', label: 'scootify.eco', href: 'https://scootify.eco' },
   { icon: 'clock', label: 'Пн-Нд: 09:00 - 21:00' },
 ];
 

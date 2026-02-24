@@ -17,10 +17,6 @@
         "function": "orders"
       },
       {
-        "source": "/api/nova-poshta/**",
-        "function": "novaPoshta"
-      },
-      {
         "source": "/api/exchange-rate",
         "function": "getExchangeRate"
       }
@@ -56,7 +52,8 @@
         "firebase-debug.log",
         "firebase-debug.*.log",
         "*.local"
-      ]
+      ],
+      "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run build"]
     }
   ],
   "firestore": {

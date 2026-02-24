@@ -18,4 +18,38 @@ export {
   type FloatingContactButtonProps,
   CookieBanner,
   type CookieBannerProps,
+  // Specs components
+  SpecsTable,
+  type SpecsTableProps,
+  // Product page components
+  ProductTerms,
+  type ProductTermsProps,
+  VideoEmbed,
+  type VideoEmbedProps,
+  Carousel,
+  CarouselSlide,
+  type CarouselProps,
+  // Consultation
+  ConsultationDialog,
+  type ConsultationDialogProps,
+  CallbackRequest,
+  type CallbackRequestProps,
+  // Section components
+  BreadcrumbNav,
+  type BreadcrumbNavProps,
+  KeySpecsBadges,
+  type KeySpecsBadgesProps,
+  CTAButtons,
+  type CTAButtonsProps,
+  GuaranteeBadges,
+  type GuaranteeBadgesProps,
+  DescriptionRenderer,
+  type DescriptionRendererProps,
+  VideoSection,
+  type VideoSectionProps,
+  SimilarProductsGrid,
+  type SimilarProductsGridProps,
+  // Product consultation one-click callback
+  ProductConsultationCTA,
+  type ProductConsultationCTAProps,
 } from '@scootify/shared/components';

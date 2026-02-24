@@ -8,16 +8,20 @@
       "brand": "teverun",
       "series": "Fighter",
       "model": "Fighter Mini",
-      "shortDescription": "Compact high-performance scooter with 2000W power and 65 km/h top speed",
+      "shortDescription": "Компактний високопродуктивний самокат з потужністю 2000W та швидкістю 65 км/год",
+      "description": "Teverun Fighter Mini — компактний та потужний електросамокат для міста. Мотор 2000W, батарея 60V, максимальна швидкість 65 км/год. Ідеальний вибір для щоденних поїздок з високою продуктивністю.",
       "categoryId": "tier-hyper",
       "categoryIds": [
         "tier-hyper",
         "use-case-performance"
       ],
       "priceUsdCents": 160000,
+      "priceUSD": 1600,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -31,7 +35,27 @@
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/hyper/teverun-fighter-mini.webp",
+          "alt": "Teverun Fighter Mini - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "teverun-fighter-mini",
+          "name": "Default",
+          "sku": "HYP-TFM-001",
+          "price": 160000,
+          "priceUsdCents": 160000,
+          "priceUSD": 1600,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 65,
@@ -77,16 +101,20 @@
       "brand": "teverun",
       "series": "Blade",
       "model": "GT 2+",
-      "shortDescription": "High-performance scooter with 4900W power and 85 km/h top speed",
+      "shortDescription": "Високопродуктивний самокат з потужністю 4900W та швидкістю 85 км/год",
+      "description": "Teverun Blade GT 2+ — потужний електросамокат з мотором 4900W та максимальною швидкістю 85 км/год. Великий запас ходу, гідравлічні гальма та амортизація для комфортних поїздок.",
       "categoryId": "tier-hyper",
       "categoryIds": [
         "tier-hyper",
         "use-case-performance"
       ],
       "priceUsdCents": 200000,
+      "priceUSD": 2000,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -100,7 +128,27 @@
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/hyper/teverun-blade-gt2.webp",
+          "alt": "Teverun Blade GT 2+ - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "teverun-blade-gt2",
+          "name": "Default",
+          "sku": "HYP-TBG-001",
+          "price": 200000,
+          "priceUsdCents": 200000,
+          "priceUSD": 2000,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 85,
@@ -153,9 +201,12 @@
         "use-case-performance"
       ],
       "priceUsdCents": 380000,
+      "priceUSD": 3800,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -169,7 +220,27 @@
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/hyper/teverun-supreme-ultra.webp",
+          "alt": "Teverun Supreme Ultra 7260 - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "teverun-supreme-ultra-7260",
+          "name": "Default",
+          "sku": "HYP-TSU-001",
+          "price": 380000,
+          "priceUsdCents": 380000,
+          "priceUSD": 3800,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 107,
@@ -229,9 +300,12 @@
         "use-case-performance"
       ],
       "priceUsdCents": 430000,
+      "priceUSD": 4300,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -245,7 +319,27 @@
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/hyper/teverun-supreme-7260r.webp",
+          "alt": "Teverun Supreme 7260R V4 - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "teverun-supreme-7260r-v4",
+          "name": "Default",
+          "sku": "HYP-TS7-001",
+          "price": 430000,
+          "priceUsdCents": 430000,
+          "priceUSD": 4300,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 120,
@@ -305,9 +399,12 @@
         "use-case-performance"
       ],
       "priceUsdCents": 420000,
+      "priceUSD": 4200,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -321,7 +418,27 @@
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/hyper/inmotion-rs.webp",
+          "alt": "Inmotion RS - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "inmotion-rs",
+          "name": "Default",
+          "sku": "HYP-IRS-001",
+          "price": 420000,
+          "priceUsdCents": 420000,
+          "priceUSD": 4200,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 105,
@@ -374,16 +491,20 @@
       "brand": "nami",
       "series": "Burn-E",
       "model": "Burn-E 3 Max",
-      "shortDescription": "High-performance scooter with 8400W power, 100 km/h speed, and large display",
+      "shortDescription": "Високопродуктивний самокат з потужністю 8400W, швидкістю 100 км/год та великим дисплеєм",
+      "description": "Nami Burn-E 3 Max — флагманський електросамокат з потужністю 8400W, швидкістю до 100 км/год та великим TFT-дисплеєм. Карбонова колонка керма та гідравлічна підвіска.",
       "categoryId": "tier-hyper",
       "categoryIds": [
         "tier-hyper",
         "use-case-performance"
       ],
       "priceUsdCents": 399900,
+      "priceUSD": 3999,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -392,12 +513,32 @@
       },
       "images": [
         {
-          "url": "/products/hyper/nami-burn-e3-max.webp",
+          "url": "/products/hyper/nami-burn-e-max.webp",
           "alt": "Nami Burn-E 3 Max - зображення 1",
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/hyper/nami-burn-e-max.webp",
+          "alt": "Nami Burn-E 3 Max - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "nami-burn-e3-max",
+          "name": "Default",
+          "sku": "HYP-NBE3-001",
+          "price": 399900,
+          "priceUsdCents": 399900,
+          "priceUSD": 3999,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 100,
@@ -449,9 +590,12 @@
         "use-case-performance"
       ],
       "priceUsdCents": 400000,
+      "priceUSD": 4000,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -465,7 +609,27 @@
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/hyper/mars-gtr-xtr.webp",
+          "alt": "Mars GTR / Teewing XTR - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "mars-gtr-xtr",
+          "name": "Default",
+          "sku": "HYP-MGX-001",
+          "price": 400000,
+          "priceUsdCents": 400000,
+          "priceUSD": 4000,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 107,
@@ -525,9 +689,12 @@
         "use-case-offroad"
       ],
       "priceUsdCents": 399900,
+      "priceUSD": 3999,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -541,7 +708,27 @@
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/hyper/surron-light-bee.webp",
+          "alt": "Surron Light Bee 2025 - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "surron-light-bee-2025",
+          "name": "Default",
+          "sku": "HYP-SLB-001",
+          "price": 399900,
+          "priceUsdCents": 399900,
+          "priceUSD": 3999,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 80,
@@ -590,16 +777,20 @@
       "brand": "nanrobot",
       "series": "LS",
       "model": "LS7+",
-      "shortDescription": "High-performance scooter with 7000W power and 100 km/h top speed",
+      "shortDescription": "Високопродуктивний самокат з потужністю 7000W та швидкістю 100 км/год",
+      "description": "Nanrobot LS7+ — потужний електросамокат з двомоторною системою 7000W та швидкістю до 100 км/год. Великі колеса та гідравлічні гальма для безпечних поїздок.",
       "categoryId": "tier-hyper",
       "categoryIds": [
         "tier-hyper",
         "use-case-performance"
       ],
       "priceUsdCents": 340000,
+      "priceUSD": 3400,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -613,7 +804,27 @@
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/hyper/nanrobot-ls7.webp",
+          "alt": "Nanrobot LS7+ - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "nanrobot-ls7-plus",
+          "name": "Default",
+          "sku": "HYP-NLS7-001",
+          "price": 340000,
+          "priceUsdCents": 340000,
+          "priceUSD": 3400,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 100,
@@ -655,7 +866,7 @@
       "brand": "tiger",
       "series": "Tiger",
       "model": "KING RS",
-      "shortDescription": "Флагманський самокат з 11-дюймовими колесами та гідравлічною підвіскою. Два мотори з піковою потужністю {totalPower}W розганяють до {maxSpeed} км/год та забезпечують {range} км запасу ходу.",
+      "shortDescription": "Флагманський самокат з 11-дюймовими колесами та гідравлічною підвіскою. Два мотори з піковою потужністю 5800W розганяють до 90 км/год та забезпечують 135 км запасу ходу.",
       "description": "Tiger KING RS — це вершина інженерної думки Hiley, створений для тих, хто не йде на компроміси. Двомоторна система потужністю 4600W розганяє самокат до 90 км/год, а преміальна батарея Samsung 35Ah забезпечує неймовірні 135 км на одному заряді.\n\nГідравлічна підвіска з регулюванням поглинає будь-які нерівності, перетворюючи кожну поїздку на задоволення. 11-дюймові безкамерні шини та 4-поршневі гальма NUTT гарантують впевненість на будь-якій швидкості.\n\nNFC-замок, RGB-підсвітка, мобільний додаток та поворотники — KING RS має все, що потрібно сучасному райдеру. Водозахист IPX6 дозволяє їздити в будь-яку погоду.",
       "categoryId": "tier-premium",
       "categoryIds": [
@@ -664,9 +875,13 @@
       ],
       "priceUsdCents": 330000,
       "originalPriceUsdCents": 368900,
+      "priceUSD": 3300,
+      "compareAtPriceUSD": 3689,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -695,8 +910,46 @@
           "isMain": false
         }
       ],
+      "imagesDetailed": [
+        {
+          "url": "/products/tiger-king-rs/main.webp",
+          "alt": "Tiger KING RS - зображення 1",
+          "isMain": true
+        },
+        {
+          "url": "/products/tiger-king-rs/folded.webp",
+          "alt": "Tiger KING RS - зображення 2",
+          "isMain": false
+        },
+        {
+          "url": "/products/tiger-king-rs/front.webp",
+          "alt": "Tiger KING RS - зображення 3",
+          "isMain": false
+        },
+        {
+          "url": "/products/tiger-king-rs/rear.webp",
+          "alt": "Tiger KING RS - зображення 4",
+          "isMain": false
+        }
+      ],
       "youtubeVideoId": "F5Q64P4nvt0",
-      "variants": [],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "tiger-king-rs",
+          "name": "Default",
+          "sku": "T-HILEY-TIGER-KING-RS",
+          "price": 330000,
+          "originalPrice": 368900,
+          "priceUsdCents": 330000,
+          "originalPriceUsdCents": 368900,
+          "priceUSD": 3300,
+          "compareAtPriceUSD": 3689,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 90,
@@ -728,7 +981,7 @@
           "foldable": true
         },
         "safety": {
-          "waterRating": "IPX6",
+          "waterRating": "IPX7",
           "brakeType": "NUTT hydraulic disc 4-piston",
           "brakePistons": 4,
           "suspensionFront": "hydraulic",
@@ -773,7 +1026,7 @@
       "brand": "tiger",
       "series": "Tiger",
       "model": "SUPRA",
-      "shortDescription": "Преміальний самокат з двомоторною системою та гідропідвіскою. Пікова потужність {totalPower}W дозволяє досягати {maxSpeed} км/год з запасом ходу {range} км.",
+      "shortDescription": "Преміальний самокат з двомоторною системою та гідропідвіскою. Пікова потужність 4700W дозволяє досягати 85 км/год з запасом ходу 105 км.",
       "description": "Tiger SUPRA — це потужний флагман лінійки з двомоторною системою 3200W та максимальною швидкістю 85 км/год. Гідравлічна підвіска з регулюванням забезпечує комфорт на будь-якій дорозі.\n\n11-дюймові безкамерні колеса та 4-поршневі гальма NUTT — стандарт безпеки преміум-класу. NFC-замок, RGB-підсвітка, мобільний додаток та поворотники входять у стандартну комплектацію.\n\nВодозахист IPX6 дозволяє не боятися дощу. Обирайте батарею під ваші потреби: BASE, PRO або MAX.",
       "categoryId": "tier-premium",
       "categoryIds": [
@@ -782,10 +1035,14 @@
       ],
       "priceUsdCents": 260000,
       "originalPriceUsdCents": 290000,
+      "priceUSD": 2600,
+      "compareAtPriceUSD": 2900,
       "inStock": true,
       "stockCount": 5,
       "shippingDays": 14,
       "preorder": false,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "percentage",
@@ -819,8 +1076,104 @@
           "isMain": false
         }
       ],
+      "imagesDetailed": [
+        {
+          "url": "/products/tiger-supra-pro/main.webp",
+          "alt": "Tiger SUPRA - зображення 1",
+          "isMain": true
+        },
+        {
+          "url": "/products/tiger-supra-pro/display.webp",
+          "alt": "Tiger SUPRA - зображення 2",
+          "isMain": false
+        },
+        {
+          "url": "/products/tiger-supra-pro/folded.webp",
+          "alt": "Tiger SUPRA - зображення 3",
+          "isMain": false
+        },
+        {
+          "url": "/products/tiger-supra-pro/front.webp",
+          "alt": "Tiger SUPRA - зображення 4",
+          "isMain": false
+        },
+        {
+          "url": "/products/tiger-supra-pro/rear.webp",
+          "alt": "Tiger SUPRA - зображення 5",
+          "isMain": false
+        }
+      ],
       "youtubeVideoId": "LTRlHErCGGU",
-      "variants": [],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "tiger-supra-pro",
+          "name": "PRO (35Ah)",
+          "sku": "T-HILEY-TIGER-SUPRA-PRO",
+          "price": 285000,
+          "originalPrice": 312900,
+          "priceUsdCents": 285000,
+          "originalPriceUsdCents": 312900,
+          "priceUSD": 2850,
+          "compareAtPriceUSD": 3129,
+          "inStock": true,
+          "stockCount": 3,
+          "specsOverride": {
+            "battery": {
+              "voltage": 60,
+              "capacity": 35,
+              "wattHours": 2100,
+              "cells": "Samsung",
+              "chargeTime": {
+                "min": 6,
+                "max": 12
+              },
+              "chargerSpec": "67.2V 3.5A"
+            },
+            "performance": {
+              "maxSpeed": 85,
+              "range": 120,
+              "maxIncline": 30,
+              "maxLoad": 130
+            }
+          },
+          "attributes": {}
+        },
+        {
+          "id": "tiger-supra-max",
+          "name": "MAX (40Ah)",
+          "sku": "T-HILEY-TIGER-SUPRA-MAX",
+          "price": 300000,
+          "originalPrice": 330000,
+          "priceUsdCents": 300000,
+          "originalPriceUsdCents": 330000,
+          "priceUSD": 3000,
+          "compareAtPriceUSD": 3300,
+          "inStock": true,
+          "stockCount": 2,
+          "specsOverride": {
+            "battery": {
+              "voltage": 60,
+              "capacity": 40,
+              "wattHours": 2400,
+              "cells": "Samsung",
+              "chargeTime": {
+                "min": 7,
+                "max": 14
+              },
+              "chargerSpec": "67.2V 3.5A"
+            },
+            "performance": {
+              "maxSpeed": 85,
+              "range": 135,
+              "maxIncline": 30,
+              "maxLoad": 130
+            }
+          },
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 85,
@@ -853,7 +1206,7 @@
           "foldable": true
         },
         "safety": {
-          "waterRating": "IPX6",
+          "waterRating": "IPX7",
           "brakeType": "NUTT hydraulic disc 4-piston",
           "brakePistons": 4,
           "suspensionFront": "hydraulic",
@@ -906,9 +1259,12 @@
         "use-case-performance"
       ],
       "priceUsdCents": 485900,
+      "priceUSD": 4859,
       "inStock": false,
       "shippingDays": 14,
       "preorder": true,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "fixed",
@@ -922,7 +1278,27 @@
           "isMain": true
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/products/nami/burn-e-max-main.webp",
+          "alt": "Nami Burn-E MAX - зображення 1",
+          "isMain": true
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "nami-burn-e-max",
+          "name": "Default",
+          "sku": "NM-BEM-001",
+          "price": 485900,
+          "priceUsdCents": 485900,
+          "priceUSD": 4859,
+          "inStock": false,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 95,
@@ -997,11 +1373,15 @@
         "tier-hyper",
         "use-case-performance"
       ],
-      "priceUsdCents": 400000,
+      "priceUsdCents": 410000,
       "originalPriceUsdCents": 460000,
+      "priceUSD": 4100,
+      "compareAtPriceUSD": 4600,
       "inStock": true,
       "shippingDays": 14,
       "preorder": false,
+      "discontinued": false,
+      "hidden": false,
       "purchaseModel": "consultation",
       "prepaymentTerms": {
         "type": "fixed",
@@ -1075,7 +1455,90 @@
           "isMain": false
         }
       ],
-      "variants": [],
+      "imagesDetailed": [
+        {
+          "url": "/images/products/wolf-king-gtr/main.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 1",
+          "isMain": true
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-1.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 2",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-2.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 3",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-3.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 4",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-4.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 5",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-5.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 6",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-6.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 7",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-7.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 8",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-8.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 9",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-9.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 10",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-10.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 11",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-11.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 12",
+          "isMain": false
+        },
+        {
+          "url": "/images/products/wolf-king-gtr/gallery-12.webp",
+          "alt": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max) - зображення 13",
+          "isMain": false
+        }
+      ],
+      "colors": [],
+      "colorHexMap": {},
+      "variants": [
+        {
+          "id": "kaabo-bc9faad1-e964-4a15-8210-11cbfc782579",
+          "name": "Default",
+          "sku": "KAABO-WK-GTR-MAX-GOLD",
+          "price": 410000,
+          "originalPrice": 460000,
+          "priceUsdCents": 410000,
+          "originalPriceUsdCents": 460000,
+          "priceUSD": 4100,
+          "compareAtPriceUSD": 4600,
+          "inStock": true,
+          "attributes": {}
+        }
+      ],
       "specs": {
         "performance": {
           "maxSpeed": 105,
@@ -1118,7 +1581,7 @@
               "weightKg": 70
             }
           ],
-          "cargoDescription": "Електросамокат Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max)"
+          "cargoDescription": "Електросамокат Kaabo Wolf King GTR Серія (GTR / GTR Max)"
         }
       },
       "warranty": {
@@ -1127,7 +1590,7 @@
     }
   ],
   "metadata": {
-    "syncedAt": "2026-02-21T12:12:22.446Z",
+    "syncedAt": "2026-02-24T13:37:57.329Z",
     "source": "@scootify/shared/db",
     "domain": "hysco.com.ua"
   }

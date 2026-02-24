@@ -16,7 +16,13 @@ console.log('🔄 Syncing products from shared database...\n');
 
 // Get products for hysco.com.ua domain
 const dbProducts = getScootersByDomain('hysco.com.ua');
-const products = toComponentProducts(dbProducts);
+const rawProducts = toComponentProducts(dbProducts);
+
+// Transform for Hysco format: use imagesDetailed instead of images
+const products = rawProducts.map((p: any) => ({
+  ...p,
+  images: p.imagesDetailed || [],
+}));
 
 console.log(`✓ Found ${products.length} products for hysco.com.ua`);
 

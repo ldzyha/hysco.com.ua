@@ -2,56 +2,28 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { MetallicText, Icon, Price, ProductTile } from '@/components/ui';
-import { metallic, type MetallicVariant } from '@/lib/metallic';
+import {
+  MetallicText,
+  Price,
+  ProductTile,
+  SpecsTable,
+  ProductTerms,
+  Carousel,
+  CarouselSlide,
+  BreadcrumbNav,
+  KeySpecsBadges,
+  GuaranteeBadges,
+  DescriptionRenderer,
+  VideoSection,
+  SimilarProductsGrid,
+} from '@/components/ui';
+import { ProductConsultationCTA } from '@/components/ui';
 import { getAllProductSlugsAsync, getProductBySlugAsync, getSimilarProducts, productToTileData } from '@/lib/products';
 import { generateProductSchema } from '@/lib/jsonld';
 import { productVideos } from '@/types/product';
-import { initExchangeRate } from '@/lib/currency';
+import { initExchangeRate, usdToUah } from '@scootify/shared/lib/currency';
+import { siteConfig } from '@/config/site';
 import styles from './page.module.css';
-import type { CSSProperties } from 'react';
-
-function CTALink({
-  href,
-  variant = 'blue',
-  size = 'lg',
-  external = false,
-  children,
-}: {
-  href: string;
-  variant?: MetallicVariant;
-  size?: 'sm' | 'md' | 'lg';
-  external?: boolean;
-  children: React.ReactNode;
-}) {
-  const sizeStyles: Record<string, CSSProperties> = {
-    sm: { padding: '8px 16px', fontSize: '13px' },
-    md: { padding: '12px 24px', fontSize: '14px' },
-    lg: { padding: '16px 32px', fontSize: '16px' },
-  };
-  return (
-    <a
-      href={href}
-      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      style={{
-        background: metallic[variant],
-        color: variant === 'gold' || variant === 'brandText' ? '#121212' : '#ffffff',
-        border: 'none',
-        borderRadius: '9999px',
-        fontWeight: 600,
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '8px',
-        textDecoration: 'none',
-        transition: 'all 0.2s ease',
-        ...sizeStyles[size],
-      }}
-    >
-      {children}
-    </a>
-  );
-}
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -72,12 +44,12 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     title: `${product.name} | Купити`,
     description: product.shortDescription || product.description,
     openGraph: {
-      type: 'website',
+      locale: 'uk_UA',
       url: `/product/${slug}/`,
       siteName: 'HYSCO',
       title: `${product.name} | HYSCO`,
       description: product.shortDescription || '',
-      images: mainImage ? [{ url: mainImage.url, alt: product.name }] : [],
+      images: mainImage ? [{ url: mainImage.url, alt: product.name, width: 1200, height: 630 }] : [],
     },
     twitter: {
       card: 'summary_large_image',
@@ -86,6 +58,9 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
       images: mainImage ? [mainImage.url] : [],
     },
     alternates: { canonical: `/product/${slug}/` },
+    other: {
+      'og:type': 'product',
+    },
   };
 }
 
@@ -101,52 +76,51 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const mainImage = product.images.find((img) => img.isMain) || product.images[0];
   const similar = getSimilarProducts(slug, 4);
   const videos = productVideos[slug];
-  const totalPower = product.specs?.motor?.count && product.specs?.motor?.powerPerMotor
-    ? product.specs.motor.count * product.specs.motor.powerPerMotor
-    : product.specs?.motor?.totalPower;
   const productJsonLd = generateProductSchema(product);
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Каталог',
-        item: 'https://hysco.com.ua/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: product.name,
-        item: `https://hysco.com.ua/product/${slug}/`,
-      },
+      { '@type': 'ListItem', position: 1, name: 'Каталог', item: 'https://hysco.com.ua/' },
+      { '@type': 'ListItem', position: 2, name: product.name, item: `https://hysco.com.ua/product/${slug}/` },
     ],
   };
 
+  const galleryImages = product.images.length > 0 ? product.images : (mainImage ? [mainImage] : []);
+  const thumbnails = galleryImages.map((img) => img.url);
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className={styles.page}>
         {/* Breadcrumb */}
-        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">Каталог</Link>
-          <Icon name="chevronRight" size="xs" color="var(--foreground-muted)" />
-          <span aria-current="page">{product.name}</span>
-        </nav>
+        <BreadcrumbNav
+          items={[{ label: 'Каталог', href: '/' }, { label: product.name }]}
+          renderLink={(href, children) => <Link href={href}>{children}</Link>}
+          className={styles.breadcrumb}
+        />
 
         {/* Product Main */}
         <div className={styles.productMain}>
-          {/* Image */}
+          {/* Image Gallery */}
           <div className={styles.imageSection}>
-            {mainImage && (
+            {galleryImages.length > 1 ? (
+              <Carousel showThumbnails thumbnails={thumbnails} showDots={false} loop>
+                {galleryImages.map((image, index) => (
+                  <CarouselSlide key={index}>
+                    <Image
+                      src={image.url}
+                      alt={image.alt || product.name}
+                      width={600}
+                      height={450}
+                      className={styles.productImage}
+                      priority={index === 0}
+                    />
+                  </CarouselSlide>
+                ))}
+              </Carousel>
+            ) : mainImage ? (
               <Image
                 src={mainImage.url}
                 alt={mainImage.alt || product.name}
@@ -155,7 +129,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 className={styles.productImage}
                 priority
               />
-            )}
+            ) : null}
           </div>
 
           {/* Info */}
@@ -169,129 +143,58 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <p className={styles.shortDesc}>{product.shortDescription}</p>
             )}
 
-            <Price usdCents={product.priceUsdCents} size="lg" />
+            <Price
+              primaryCents={usdToUah(product.priceUsdCents)}
+              secondaryCents={product.priceUsdCents}
+              originalPrimaryCents={product.originalPriceUsdCents ? usdToUah(product.originalPriceUsdCents) : undefined}
+              originalSecondaryCents={product.originalPriceUsdCents}
+              size="lg"
+              approximate={true}
+            />
 
-            {/* Key Specs */}
-            <div className={styles.keySpecs}>
-              {product.specs?.performance?.maxSpeed && (
-                <div className={styles.specItem}>
-                  <Icon name="lightning" size="md" metallic="gold" />
-                  <div>
-                    <span className={styles.specValue}>{product.specs.performance.maxSpeed} км/год</span>
-                    <span className={styles.specLabel}>Макс. швидкість</span>
-                  </div>
-                </div>
-              )}
-              {product.specs?.performance?.range && (
-                <div className={styles.specItem}>
-                  <Icon name="mapPin" size="md" metallic="blue" />
-                  <div>
-                    <span className={styles.specValue}>{product.specs.performance.range} км</span>
-                    <span className={styles.specLabel}>Запас ходу</span>
-                  </div>
-                </div>
-              )}
-              {totalPower && (
-                <div className={styles.specItem}>
-                  <Icon name="lightning" size="md" metallic="gold" />
-                  <div>
-                    <span className={styles.specValue}>{totalPower}W</span>
-                    <span className={styles.specLabel}>Потужність</span>
-                  </div>
-                </div>
-              )}
-              {product.specs?.battery?.voltage && (
-                <div className={styles.specItem}>
-                  <Icon name="lightning" size="md" metallic="blue" />
-                  <div>
-                    <span className={styles.specValue}>
-                      {product.specs.battery.voltage}V
-                      {product.specs.battery.capacity ? ` ${product.specs.battery.capacity}Ah` : ''}
-                    </span>
-                    <span className={styles.specLabel}>Батарея</span>
-                  </div>
-                </div>
-              )}
-            </div>
+            <KeySpecsBadges specs={product.specs} />
 
-            {/* CTA */}
-            <div className={styles.cta}>
-              <CTALink href="https://t.me/scootify_eco" variant="brandText" size="lg" external>
-                <Icon name="telegram" size="sm" />
-                Замовити в Telegram
-              </CTALink>
-              <CTALink href="tel:+380772770006" variant="blue" size="lg">
-                <Icon name="phone" size="sm" />
-                Зателефонувати
-              </CTALink>
-            </div>
+            <ProductConsultationCTA productName={product.name} productSlug={slug} />
 
-            {/* Warranty & Shipping */}
-            <div className={styles.guarantees}>
-              <div className={styles.guarantee}>
-                <Icon name="shieldCheck" size="sm" metallic="blue" />
-                <span>Гарантія {product.warranty?.months || 6} місяців</span>
-              </div>
-              <div className={styles.guarantee}>
-                <Icon name="truck" size="sm" metallic="blue" />
-                <span>Доставка по всій Україні</span>
-              </div>
-              {product.preorder && (
-                <div className={styles.guarantee}>
-                  <Icon name="clock" size="sm" metallic="gold" />
-                  <span>Передзамовлення ~{product.shippingDays} днів</span>
-                </div>
-              )}
-            </div>
+            <GuaranteeBadges
+              warrantyMonths={product.warranty?.months || 6}
+              showShipping
+              preorderDays={product.preorder ? product.shippingDays : undefined}
+            />
           </div>
         </div>
 
         {/* Description */}
         {product.description && (
           <section className={styles.descriptionSection}>
-            <MetallicText variant="silver" as="h2" className={styles.sectionTitle}>
-              Опис
-            </MetallicText>
-            <p className={styles.description}>{product.description}</p>
+            <MetallicText variant="silver" as="h2" className={styles.sectionTitle}>Опис</MetallicText>
+            <DescriptionRenderer text={product.description} mode="plain" />
           </section>
         )}
 
-        {/* Video */}
-        {videos && videos.length > 0 && (
-          <section className={styles.videoSection}>
-            <MetallicText variant="silver" as="h2" className={styles.sectionTitle}>
-              Відео
-            </MetallicText>
-            <div className={styles.videoGrid}>
-              {videos.map((video) => (
-                <div key={video.id} className={styles.videoEmbed}>
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={`${product.name} video`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                    className={styles.iframe}
-                  />
-                </div>
-              ))}
-            </div>
+        {/* Full Specs Table */}
+        {product.specs && (
+          <section className={styles.specsSection}>
+            <MetallicText variant="silver" as="h2" className={styles.sectionTitle}>Характеристики</MetallicText>
+            <SpecsTable specs={product.specs} showInfoButtons />
           </section>
         )}
+
+        {/* Product Terms */}
+        <section className={styles.termsSection}>
+          <MetallicText variant="silver" as="h2" className={styles.sectionTitle}>Умови</MetallicText>
+          <ProductTerms siteConfig={siteConfig} purchaseModel="consultation" />
+        </section>
+
+        {/* Videos */}
+        {videos && <VideoSection videos={videos} productName={product.name} />}
 
         {/* Similar Products */}
-        {similar.length > 0 && (
-          <section className={styles.similarSection}>
-            <MetallicText variant="silver" as="h2" className={styles.sectionTitle}>
-              Схожі моделі
-            </MetallicText>
-            <div className={styles.similarGrid}>
-              {similar.map((p) => (
-                <ProductTile key={p.id} product={productToTileData(p)} />
-              ))}
-            </div>
-          </section>
-        )}
+        <SimilarProductsGrid count={similar.length}>
+          {similar.map((p) => (
+            <ProductTile key={p.id} product={productToTileData(p)} purchaseModel="consultation" />
+          ))}
+        </SimilarProductsGrid>
       </div>
     </>
   );

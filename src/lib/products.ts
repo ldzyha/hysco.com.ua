@@ -96,17 +96,51 @@ export function searchProducts(query: string): Product[] {
 }
 
 /**
+ * Map raw product series values to seriesConfig IDs
+ */
+function normalizeSeriesId(product: Product): string {
+  const series = product.series || '';
+  const brand = product.brand?.toLowerCase() || '';
+
+  // Teverun brand products → teverun section
+  if (brand === 'teverun' || ['Fighter', 'Blade', 'Supreme'].includes(series)) {
+    return 'teverun';
+  }
+
+  // Tiger brand (case-insensitive match)
+  if (brand === 'tiger' || series.toLowerCase() === 'tiger') {
+    return 'tiger';
+  }
+
+  // Nami products → premium section
+  if (brand === 'nami' || series.toLowerCase().includes('burn-e')) {
+    return 'premium';
+  }
+
+  // Kaabo, Nanrobot → extreme section
+  if (brand === 'kaabo' || brand === 'nanrobot' || ['Kaabo', 'LS'].includes(series)) {
+    return 'extreme';
+  }
+
+  // Direct matches (premium, extreme, offroad)
+  const directMatch = seriesConfigs.find((s) => s.id === series.toLowerCase());
+  if (directMatch) return directMatch.id;
+
+  return 'other';
+}
+
+/**
  * Get products grouped by series
  */
 export function getProductsBySeries(): Map<string, Product[]> {
   const seriesMap = new Map<string, Product[]>();
 
   for (const product of products) {
-    const series = product.series || 'other';
-    if (!seriesMap.has(series)) {
-      seriesMap.set(series, []);
+    const seriesId = normalizeSeriesId(product);
+    if (!seriesMap.has(seriesId)) {
+      seriesMap.set(seriesId, []);
     }
-    seriesMap.get(series)!.push(product);
+    seriesMap.get(seriesId)!.push(product);
   }
 
   return seriesMap;
@@ -132,13 +166,13 @@ const seriesConfigs: SeriesConfig[] = [
   {
     id: 'premium',
     name: 'Premium',
-    description: 'Inmotion та Nami — еталони якості, комфорту та інженерії',
+    description: 'Inmotion та Nami Burn-E — еталони якості, комфорту та інженерії',
     badge: 'PREMIUM',
   },
   {
     id: 'extreme',
     name: 'Extreme',
-    description: 'Мотоциклетні вилки та максимальна потужність — Mars та Kaabo',
+    description: 'Мотоциклетні вилки та максимальна потужність — Mars, Kaabo, Nanrobot',
     badge: 'EXTREME',
   },
   {

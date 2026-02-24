@@ -3,7 +3,7 @@
  */
 
 import type { Product } from '@/types/product';
-import { getExchangeRate } from '@/lib/currency';
+import { getExchangeRates } from '@scootify/shared/lib/currency';
 
 const SITE_URL = 'https://hysco.com.ua';
 const SITE_NAME = 'HYSCO';
@@ -79,7 +79,7 @@ export function generateProductSchema(product: Product) {
       '@type': 'Offer',
       url: `${SITE_URL}/product/${product.slug}`,
       priceCurrency: 'UAH',
-      price: Math.round((product.priceUsdCents / 100) * getExchangeRate()).toFixed(2),
+      price: Math.round((product.priceUsdCents / 100) * getExchangeRates().UAH).toFixed(2),
       availability: product.inStock
         ? 'https://schema.org/InStock'
         : 'https://schema.org/PreOrder',
@@ -141,7 +141,7 @@ export function generateItemListSchema(
         offers: {
           '@type': 'Offer',
           priceCurrency: 'UAH',
-          price: Math.round((item.priceUsdCents / 100) * getExchangeRate()).toFixed(2),
+          price: Math.round((item.priceUsdCents / 100) * getExchangeRates().UAH).toFixed(2),
         },
       },
     })),
