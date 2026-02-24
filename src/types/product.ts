@@ -169,4 +169,16 @@ export const productVideos: Record<string, ProductVideo[]> = {
   'surron-light-bee': [
     { id: 'fu8usBL9kPk', type: 'youtube' },
   ],
+  // Teverun Fighter Mini — ESG review (EN)
+  'teverun-fighter-mini': [
+    { id: 'l0KBUOLNXro', type: 'youtube' },
+  ],
+  // Teverun Blade GT2 — ESG review (EN)
+  'teverun-blade-gt2': [
+    { id: 'saKVtrron6k', type: 'youtube' },
+  ],
+  // Nanrobot LS7+ — review (EN)
+  'nanrobot-ls7': [
+    { id: 'PMsx8QZJ6RY', type: 'youtube' },
+  ],
 };

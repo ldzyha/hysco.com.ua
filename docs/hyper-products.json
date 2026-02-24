@@ -8,8 +8,8 @@
       "brand": "teverun",
       "series": "Fighter",
       "model": "Fighter Mini",
-      "shortDescription": "Компактний високопродуктивний самокат з потужністю 2000W та швидкістю 65 км/год",
-      "description": "Teverun Fighter Mini — компактний та потужний електросамокат для міста. Мотор 2000W, батарея 60V, максимальна швидкість 65 км/год. Ідеальний вибір для щоденних поїздок з високою продуктивністю.",
+      "shortDescription": "Компактний одномоторний самокат: 2000W (3300W пік), 60V, швидкість 65 км/год, запас ходу 100 км",
+      "description": "Teverun Fighter Mini — компактний та потужний електросамокат для міста. Мотор 2000W (3300W пік), батарея 60V 25Ah, максимальна швидкість 65 км/год та запас ходу до 100 км. Гідравлічні гальма, пружинна підвіска, APP підтримка.",
       "categoryId": "tier-hyper",
       "categoryIds": [
         "tier-hyper",
@@ -59,31 +59,53 @@
       "specs": {
         "performance": {
           "maxSpeed": 65,
-          "range": 80
+          "range": 100,
+          "maxLoad": 120
         },
         "motor": {
-          "totalPower": 2000
+          "count": 1,
+          "powerPerMotor": 2000,
+          "totalPower": 2000,
+          "type": "hub"
         },
         "battery": {
           "voltage": 60,
           "voltageMin": 52,
           "capacity": 25,
-          "capacityMin": 15
+          "capacityMin": 15,
+          "wattHours": 1500,
+          "chargeTime": {
+            "min": 8,
+            "max": 12
+          },
+          "chargerSpec": "67.2V 3A"
         },
-        "physical": {},
-        "safety": {},
+        "physical": {
+          "weight": 32,
+          "wheelSize": 10,
+          "wheelType": "pneumatic",
+          "foldable": true
+        },
+        "safety": {
+          "brakeType": "Hydraulic disc",
+          "brakePistons": 2,
+          "suspensionFront": "spring",
+          "suspensionRear": "spring"
+        },
         "features": {
+          "display": true,
+          "cruiseControl": true,
           "app": true
         },
         "shipping": {
-          "weightKg": 55,
+          "weightKg": 37,
           "seatsAmount": 1,
           "boxes": [
             {
-              "lengthCm": 140,
-              "widthCm": 75,
-              "heightCm": 70,
-              "weightKg": 55
+              "lengthCm": 130,
+              "widthCm": 55,
+              "heightCm": 50,
+              "weightKg": 37
             }
           ],
           "cargoDescription": "Електросамокат Teverun Fighter Mini"
@@ -101,8 +123,8 @@
       "brand": "teverun",
       "series": "Blade",
       "model": "GT 2+",
-      "shortDescription": "Високопродуктивний самокат з потужністю 4900W та швидкістю 85 км/год",
-      "description": "Teverun Blade GT 2+ — потужний електросамокат з мотором 4900W та максимальною швидкістю 85 км/год. Великий запас ходу, гідравлічні гальма та амортизація для комфортних поїздок.",
+      "shortDescription": "Двомоторний самокат: 2x1500W (4900W пік), 60V 35Ah, швидкість 85 км/год, запас ходу 120 км",
+      "description": "Teverun Blade GT 2+ — потужний двомоторний електросамокат з 2x1500W (піковою 4900W) та максимальною швидкістю 85 км/год. Батарея 60V 35Ah забезпечує запас ходу до 120 км. Гідравлічні гальма, пружинна підвіска з регулюванням, APP підтримка.",
       "categoryId": "tier-hyper",
       "categoryIds": [
         "tier-hyper",
@@ -152,30 +174,55 @@
       "specs": {
         "performance": {
           "maxSpeed": 85,
-          "range": 80
+          "range": 120,
+          "maxLoad": 120
         },
         "motor": {
-          "totalPower": 4900
+          "count": 2,
+          "powerPerMotor": 1500,
+          "totalPower": 3000,
+          "type": "hub"
         },
         "battery": {
           "voltage": 60,
           "capacity": 35,
-          "capacityMin": 26
+          "capacityMin": 26,
+          "wattHours": 2100,
+          "chargeTime": {
+            "min": 10,
+            "max": 14
+          },
+          "chargerSpec": "67.2V 3A"
         },
-        "physical": {},
-        "safety": {},
+        "physical": {
+          "weight": 39,
+          "wheelSize": 10,
+          "wheelType": "pneumatic",
+          "foldable": true
+        },
+        "safety": {
+          "waterRating": "IPX4",
+          "brakeType": "Hydraulic disc",
+          "brakePistons": 2,
+          "suspensionFront": "spring",
+          "suspensionRear": "spring",
+          "suspensionAdjustable": true
+        },
         "features": {
-          "app": true
+          "display": true,
+          "cruiseControl": true,
+          "app": true,
+          "dualMotorMode": true
         },
         "shipping": {
-          "weightKg": 55,
+          "weightKg": 44,
           "seatsAmount": 1,
           "boxes": [
             {
               "lengthCm": 140,
-              "widthCm": 75,
-              "heightCm": 70,
-              "weightKg": 55
+              "widthCm": 55,
+              "heightCm": 50,
+              "weightKg": 44
             }
           ],
           "cargoDescription": "Електросамокат Teverun Blade GT 2+"
@@ -391,8 +438,8 @@
       "brand": "inmotion",
       "series": "premium",
       "model": "RS",
-      "shortDescription": "Преміальний самокат з найкращим водозахистом IPX6/IPX7 та регулюванням кліренсу",
-      "description": "Inmotion RS — преміальний електросамокат з найкращим водозахистом IPX6/IPX7 у класі. Регулювання кліренсу, Smart BMS, потужний двигун 8400W. Батарея 72V 40Ah забезпечує запас ходу до 120 км. Еталон якості збірки та інженерії.",
+      "shortDescription": "Преміальний самокат з водозахистом IP67, швидкістю 110 км/год та запасом ходу 161 км",
+      "description": "Inmotion RS — преміальний електросамокат з найкращим водозахистом IP67 у класі. Регулювання кліренсу, Smart BMS, потужний двигун 8400W. Батарея 72V 40Ah забезпечує запас ходу до 161 км. Максимальна швидкість 110 км/год. Еталон якості збірки та інженерії.",
       "categoryId": "tier-hyper",
       "categoryIds": [
         "tier-hyper",
@@ -441,8 +488,9 @@
       ],
       "specs": {
         "performance": {
-          "maxSpeed": 105,
-          "range": 120
+          "maxSpeed": 110,
+          "range": 161,
+          "maxLoad": 150
         },
         "motor": {
           "count": 2,
@@ -454,12 +502,28 @@
           "voltage": 72,
           "capacity": 40
         },
-        "physical": {},
+        "physical": {
+          "weight": 58,
+          "wheelSize": 11,
+          "wheelType": "pneumatic",
+          "foldable": true
+        },
         "safety": {
-          "waterRating": "IPX6"
+          "waterRating": "IP67",
+          "brakeType": "Hydraulic disc",
+          "brakePistons": 4,
+          "suspensionFront": "hydraulic",
+          "suspensionRear": "hydraulic",
+          "suspensionAdjustable": true
         },
         "features": {
-          "app": true
+          "display": true,
+          "cruiseControl": true,
+          "app": true,
+          "rgbLeds": true,
+          "alarm": true,
+          "regenerativeBrake": true,
+          "dualMotorMode": true
         },
         "shipping": {
           "weightKg": 50,
@@ -777,8 +841,8 @@
       "brand": "nanrobot",
       "series": "LS",
       "model": "LS7+",
-      "shortDescription": "Високопродуктивний самокат з потужністю 7000W та швидкістю 100 км/год",
-      "description": "Nanrobot LS7+ — потужний електросамокат з двомоторною системою 7000W та швидкістю до 100 км/год. Великі колеса та гідравлічні гальма для безпечних поїздок.",
+      "shortDescription": "Потужний дальнобійник: 2x3000W мотори (10000W пік), швидкість 120 км/год, запас ходу 130 км",
+      "description": "Nanrobot LS7+ — потужний електросамокат з двомоторною системою 2x3000W (піковою потужністю до 10000W) та швидкістю до 120 км/год. 11-дюймові колеса, гідравлічні гальма, батарея 72V 35Ah забезпечує запас ходу до 130 км.",
       "categoryId": "tier-hyper",
       "categoryIds": [
         "tier-hyper",
@@ -827,19 +891,44 @@
       ],
       "specs": {
         "performance": {
-          "maxSpeed": 100,
-          "range": 100
+          "maxSpeed": 120,
+          "range": 130,
+          "maxLoad": 150
         },
         "motor": {
-          "totalPower": 7000
+          "count": 2,
+          "powerPerMotor": 3000,
+          "totalPower": 6000,
+          "type": "hub"
         },
         "battery": {
           "voltage": 72,
-          "capacity": 35
+          "capacity": 35,
+          "wattHours": 2520,
+          "chargeTime": {
+            "min": 10,
+            "max": 14
+          },
+          "chargerSpec": "84V 3A"
         },
-        "physical": {},
-        "safety": {},
-        "features": {},
+        "physical": {
+          "weight": 50,
+          "wheelSize": 11,
+          "wheelType": "pneumatic",
+          "foldable": true
+        },
+        "safety": {
+          "brakeType": "Hydraulic disc",
+          "suspensionFront": "hydraulic",
+          "suspensionRear": "hydraulic",
+          "suspensionAdjustable": true
+        },
+        "features": {
+          "display": true,
+          "cruiseControl": true,
+          "turnSignals": true,
+          "dualMotorMode": true
+        },
         "shipping": {
           "weightKg": 55,
           "seatsAmount": 1,
@@ -1301,13 +1390,13 @@
       ],
       "specs": {
         "performance": {
-          "maxSpeed": 95,
+          "maxSpeed": 105,
           "range": 140,
-          "maxLoad": 120
+          "maxLoad": 150
         },
         "motor": {
           "count": 2,
-          "powerPerMotor": 1500,
+          "powerPerMotor": 4200,
           "totalPower": 8400,
           "type": "hub"
         },
@@ -1315,24 +1404,36 @@
           "voltage": 72,
           "capacity": 40,
           "wattHours": 2880,
+          "cells": "Samsung 50E",
+          "chargeTime": {
+            "min": 8,
+            "max": 12
+          },
           "chargerSpec": "72V 5A"
         },
         "physical": {
-          "weight": 53.1,
-          "wheelSize": 11,
-          "wheelType": "tubeless",
+          "weight": 50,
+          "wheelSize": 10,
+          "wheelType": "pneumatic",
           "foldable": true
         },
         "safety": {
           "waterRating": "IPX5",
           "brakeType": "Гідравлічні 160 мм, 4 поршні",
+          "brakePistons": 4,
           "suspensionFront": "hydraulic",
           "suspensionRear": "hydraulic",
           "suspensionAdjustable": true
         },
         "features": {
           "display": true,
+          "cruiseControl": true,
           "nfc": true,
+          "app": true,
+          "rgbLeds": true,
+          "alarm": true,
+          "alarmWithWheelLock": true,
+          "regenerativeBrake": true,
           "turnSignals": true,
           "dualMotorMode": true
         },
@@ -1590,7 +1691,7 @@
     }
   ],
   "metadata": {
-    "syncedAt": "2026-02-24T13:37:57.329Z",
+    "syncedAt": "2026-02-24T20:31:34.248Z",
     "source": "@scootify/shared/db",
     "domain": "hysco.com.ua"
   }
