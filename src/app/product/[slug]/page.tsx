@@ -8,8 +8,6 @@ import {
   ProductTile,
   SpecsTable,
   ProductTerms,
-  Carousel,
-  CarouselSlide,
   BreadcrumbNav,
   KeySpecsBadges,
   GuaranteeBadges,
@@ -18,6 +16,7 @@ import {
   SimilarProductsGrid,
 } from '@/components/ui';
 import { ProductConsultationCTA } from '@/components/ui';
+import { ProductGallery } from '@/components/ui/ProductGallery';
 import { getAllProductSlugsAsync, getProductBySlugAsync, getSimilarProducts, productToTileData } from '@/lib/products';
 import { generateProductSchema } from '@/lib/jsonld';
 import { productVideos } from '@/types/product';
@@ -87,7 +86,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
   };
 
   const galleryImages = product.images.length > 0 ? product.images : (mainImage ? [mainImage] : []);
-  const thumbnails = galleryImages.map((img) => img.url);
 
   return (
     <>
@@ -106,20 +104,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
           {/* Image Gallery */}
           <div className={styles.imageSection}>
             {galleryImages.length > 1 ? (
-              <Carousel showThumbnails thumbnails={thumbnails} showDots={false} loop>
-                {galleryImages.map((image, index) => (
-                  <CarouselSlide key={index}>
-                    <Image
-                      src={image.url}
-                      alt={image.alt || product.name}
-                      width={600}
-                      height={450}
-                      className={styles.productImage}
-                      priority={index === 0}
-                    />
-                  </CarouselSlide>
-                ))}
-              </Carousel>
+              <ProductGallery
+                images={galleryImages}
+                productName={product.name}
+                imageClassName={styles.productImage}
+                thumbClassName={styles.thumbImage}
+              />
             ) : mainImage ? (
               <Image
                 src={mainImage.url}

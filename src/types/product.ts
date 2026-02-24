@@ -149,13 +149,15 @@ export const productVideos: Record<string, ProductVideo[]> = {
   'inmotion-rs': [
     { id: '9IcBwUWQQog', type: 'youtube' },
   ],
-  'nami-burn-e-max': [
+  // Nami Burn-E MAX — keyed by actual product slug (burn-e-max)
+  'burn-e-max': [
     { id: 'yoYfhevyPtI', type: 'youtube' },
   ],
   'mars-gtr-xtr': [
     { id: 'l-1Ww2ZH4-E', type: 'youtube' },
   ],
-  'kaabo-wolf-king-gtr': [
+  // Kaabo Wolf King GTR — keyed by actual product slug
+  'elektrosamokat-kaabo-wolf-king-gtr-seriia': [
     { id: 'qTD2sbwvLXY', type: 'youtube' },
   ],
   'tiger-king-rs': [
