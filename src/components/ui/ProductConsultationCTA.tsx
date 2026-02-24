@@ -76,16 +76,34 @@ export function ProductConsultationCTA({ productName, productSlug }: ProductCons
           <MetallicButton
             type="submit"
             variant="brandText"
-            size="md"
+            size="lg"
             disabled={isSubmitting}
             className={styles.submitButton}
           >
+            <Icon name="phone" size="sm" />
             {isSubmitting ? 'Надсилання...' : 'Замовити дзвінок'}
           </MetallicButton>
         </form>
       )}
 
-
+      <div className={styles.alternatives}>
+        <span className={styles.altLabel}>Або напишіть нам:</span>
+        <div className={styles.altLinks}>
+          <a
+            href="https://t.me/ldzyha"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.altLink}
+          >
+            <Icon name="telegram" size="sm" />
+            Telegram
+          </a>
+          <a href="tel:+380772770006" className={styles.altLink}>
+            <Icon name="phone" size="sm" />
+            Зателефонувати
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
