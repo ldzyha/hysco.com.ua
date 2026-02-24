@@ -1,48 +1,18 @@
 @import "tailwindcss";
 
+/* ============================================================
+   HYSCO globals — Only site-specific overrides and utilities.
+   Base variables come from @scootify/shared/styles/themes/hysco.
+   
+   Glow variables here are full box-shadow shorthand values
+   (hysco.css provides just color values for component use).
+   ============================================================ */
+
 :root {
-  --primary: #ff4444;
-  --primary-dark: #cc2222;
-  --primary-light: #ff6666;
-  --secondary: #ffcc00;
-  --secondary-dark: #cc9900;
-  --secondary-light: #ffe066;
-
-  --silver-dark: #8a8a8a;
-  --silver: #c0c0c0;
-  --silver-light: #e8e8e8;
-
-  --platinum-dark: #6a6a6a;
-  --platinum: #7a7a7a;
-  --platinum-light: #a8a8a8;
-
-  --blue-metal-dark: #1a3a5c;
-  --blue-metal: #4a7eb8;
-  --blue-metal-light: #8bb8e8;
-
-  --gold-metal-dark: #8b7355;
-  --gold-metal: #d4af37;
-  --gold-metal-light: #f5e6a3;
-
-  --background: #0a0a0a;
-  --background-elevated: #141414;
-  --surface: #1a1a1a;
-  --surface-hover: #252525;
-  --foreground: #ffffff;
-  --foreground-muted: #a0a0a0;
-
-  --success: #22c55e;
-  --error: #ef4444;
-  --warning: #f59e0b;
-
-  --gradient-brand: linear-gradient(90deg, #ff5555 0%, #ff9900 25%, #ffcc00 50%, #ff9900 75%, #ff5555 100%);
-  --gradient-silver: linear-gradient(135deg, var(--silver-dark) 0%, var(--silver) 50%, var(--silver-light) 100%);
-  --gradient-blue-metal: linear-gradient(135deg, var(--blue-metal-dark) 0%, var(--blue-metal) 50%, var(--blue-metal-light) 100%);
-  --gradient-gold-metal: linear-gradient(135deg, var(--gold-metal-dark) 0%, var(--gold-metal) 50%, var(--gold-metal-light) 100%);
-
-  --glow-primary: 0 0 20px rgba(255, 68, 68, 0.4);
-  --glow-secondary: 0 0 20px rgba(255, 204, 0, 0.4);
-  --glow-brand: 0 4px 30px rgba(255, 68, 68, 0.3), 0 4px 30px rgba(255, 204, 0, 0.2);
+  /* Box-shadow glow effects (full shorthand, used by .btn-primary etc.) */
+  --glow-brand-shadow: 0 4px 30px rgba(255, 68, 68, 0.3), 0 4px 30px rgba(255, 204, 0, 0.2);
+  --glow-primary-shadow: 0 0 20px rgba(255, 68, 68, 0.4);
+  --glow-secondary-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
 }
 
 @theme inline {
@@ -67,13 +37,14 @@
   --font-sans: var(--font-inter);
 }
 
-/* Smooth scroll only for users who haven't opted out */
+/* ===== SMOOTH SCROLL ===== */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
 }
 
+/* ===== BASE RESET & BODY ===== */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -89,6 +60,44 @@ main {
   flex: 1;
 }
 
+/* ===== GLOBAL HEADING SCALE =====
+   Provides sensible defaults; components override via CSS modules. */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+}
+h1 { font-size: clamp(28px, 5vw, 48px); }
+h2 { font-size: clamp(22px, 3.5vw, 32px); }
+h3 { font-size: clamp(18px, 2.5vw, 24px); }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ===== BASE PARAGRAPH & TEXT ===== */
+p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--foreground-muted);
+}
+
+/* ===== BASE LINK STYLES ===== */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--foreground);
+}
+
+a:active {
+  opacity: 0.85;
+}
+
 /* ===== FOCUS STYLES ===== */
 :focus-visible {
   outline: 2px solid var(--primary-light);
@@ -96,10 +105,19 @@ main {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+[role="button"]:focus-visible {
   outline: 2px solid var(--primary-light);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb, 255, 68, 68), 0.15);
 }
 
 /* ===== SCREEN READER ONLY ===== */
@@ -146,29 +164,90 @@ button:focus-visible {
   top: 0;
 }
 
-/* ===== BUTTON STYLES ===== */
+/* ===== BUTTON BASE ===== */
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Primary button */
 .btn-primary {
   background: var(--gradient-brand);
   color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.875rem 2rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .btn-primary {
-    transition: all 0.3s ease;
+  .btn-primary,
+  .btn-secondary {
+    transition: box-shadow 0.25s ease, transform 0.2s ease, opacity 0.15s ease;
   }
+
   .btn-primary:hover {
-    box-shadow: var(--glow-brand);
+    box-shadow: var(--glow-brand-shadow);
     transform: translateY(-2px);
   }
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+.btn-primary:disabled,
+.btn-primary[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* Secondary button (ghost/outline) */
+.btn-secondary {
+  background: transparent;
+  color: var(--foreground-muted);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--foreground);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+  opacity: 0.85;
+}
+
+.btn-secondary:disabled,
+.btn-secondary[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  pointer-events: none;
+}
+
+/* Small button variant */
+.btn-sm {
+  padding: 0.625rem 1.25rem;
+  font-size: 13px;
 }
 
 /* ===== REDUCED MOTION ===== */

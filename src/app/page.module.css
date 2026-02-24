@@ -5,7 +5,7 @@
   background: var(--background);
 }
 
-/* Hero */
+/* ===== Hero ===== */
 .hero {
   padding: 60px 16px 80px;
   text-align: center;
@@ -21,7 +21,12 @@
   transform: translateX(-50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(255, 68, 68, 0.08) 0%, rgba(255, 204, 0, 0.04) 40%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    var(--primary-alpha-10, rgba(255, 68, 68, 0.08)) 0%,
+    rgba(255, 204, 0, 0.04) 40%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -35,7 +40,7 @@
 .heroBadge {
   display: inline-block;
   padding: 6px 16px;
-  background: rgba(255, 68, 68, 0.1);
+  background: var(--primary-alpha-10, rgba(255, 68, 68, 0.1));
   border: 1px solid rgba(255, 68, 68, 0.2);
   border-radius: 9999px;
   font-size: 12px;
@@ -48,7 +53,7 @@
 .heroTitle {
   font-size: clamp(36px, 8vw, 72px);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0 0 24px;
 }
@@ -98,25 +103,7 @@
   flex-wrap: wrap;
 }
 
-.heroSecondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.875rem 2rem;
-  color: var(--foreground-muted);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 9999px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.heroSecondary:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-  color: var(--foreground);
-}
-
-/* Catalog */
+/* ===== Catalog ===== */
 .catalog {
   padding: 0 16px 80px;
   max-width: 1280px;
@@ -136,7 +123,7 @@
 .seriesBadge {
   display: inline-block;
   padding: 4px 12px;
-  background: rgba(255, 68, 68, 0.08);
+  background: var(--primary-alpha-10, rgba(255, 68, 68, 0.08));
   border: 1px solid rgba(255, 68, 68, 0.15);
   border-radius: 6px;
   font-size: 11px;
@@ -150,11 +137,13 @@
   font-size: 28px;
   font-weight: 700;
   margin: 0 0 8px;
+  line-height: 1.2;
 }
 
 .seriesDescription {
   color: var(--foreground-muted);
   font-size: 15px;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -164,7 +153,12 @@
   gap: 20px;
 }
 
+/* ===== Responsive ===== */
 @media (max-width: 640px) {
+  .hero {
+    padding: 40px 16px 60px;
+  }
+
   .heroStats {
     gap: 20px;
   }
@@ -173,11 +167,15 @@
     font-size: 18px;
   }
 
-  .hero {
-    padding: 40px 16px 60px;
-  }
-
   .productGrid {
     grid-template-columns: 1fr;
+  }
+
+  .seriesTitle {
+    font-size: 24px;
+  }
+
+  .seriesDescription {
+    font-size: 14px;
   }
 }

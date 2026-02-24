@@ -77,7 +77,7 @@ export default async function HomePage() {
             </div>
             <div className={styles.heroCTA}>
               <a href="#catalog" className="btn-primary">Переглянути каталог</a>
-              <a href="https://t.me/scootify_eco" target="_blank" rel="noopener noreferrer" className={styles.heroSecondary}>
+              <a href="https://t.me/scootify_eco" target="_blank" rel="noopener noreferrer" className="btn-secondary">
                 Консультація в Telegram
               </a>
             </div>
@@ -100,7 +100,7 @@ export default async function HomePage() {
                   <p className={styles.seriesDescription}>{series.description}</p>
                 </div>
                 <div className={styles.productGrid}>
-                  {seriesProducts.map((product, i) => (
+                  {seriesProducts.map((product) => (
                     <ProductTile
                       key={product.id}
                       product={productToTileData(product)}

@@ -33,7 +33,7 @@
 
 .input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0, 87, 183, 0.15);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb, 255, 68, 68), 0.15);
 }
 
 .error {
@@ -53,14 +53,14 @@
   background: rgba(34, 197, 94, 0.1);
   border: 1px solid rgba(34, 197, 94, 0.2);
   border-radius: 10px;
-  color: #22c55e;
+  color: var(--success, #22c55e);
 }
 
 .successTitle {
   margin: 0;
   font-size: 15px;
   font-weight: 600;
-  color: #22c55e;
+  color: var(--success, #22c55e);
 }
 
 .successText {
@@ -97,9 +97,19 @@
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.15s ease;
 }
 
 .altLink:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.altLink:focus-visible {
+  outline: 2px solid var(--primary-light, #ff6666);
+  outline-offset: 2px;
+}
+
+.altLink:active {
+  background: rgba(255, 255, 255, 0.07);
+  opacity: 0.9;
 }
