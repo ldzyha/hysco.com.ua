@@ -28,7 +28,6 @@ export const footerNavigation: FooterNavColumn[] = [
 export const footerContacts: FooterContactItem[] = [
   { icon: 'phone', label: '+38 077 277 00 06', href: 'tel:+380772770006' },
   { icon: 'telegram', label: '@ldzyha', href: 'https://t.me/ldzyha' },
-  { icon: 'clock', label: 'Пн-Нд: 09:00 - 21:00' },
 ];
 
 export const socialLinks: FooterSocialLink[] = [
@@ -38,24 +37,14 @@ export const socialLinks: FooterSocialLink[] = [
 
 export const footerFeatures: FooterFeature[] = [
   {
-    icon: 'truck',
-    title: 'Доставка по Україні',
-    description: 'Новою Поштою по всій країні',
-  },
-  {
-    icon: 'shieldCheck',
-    title: 'Гарантія 6 місяців',
-    description: 'На всі електросамокати',
-  },
-  {
-    icon: 'phone',
-    title: 'Консультація',
-    description: 'Допоможемо обрати',
-  },
-  {
     icon: 'lightning',
     title: 'Hyper потужність',
     description: 'До 15000W та 120 км/год',
+  },
+  {
+    icon: 'shieldCheck',
+    title: 'Детальні характеристики',
+    description: 'Повні технічні дані кожної моделі',
   },
 ];
 

@@ -11,7 +11,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'HYSCO | Флагманські електросамокати — лише топ-конфігурації',
-  description: 'Лише флагмани: Teverun, Inmotion, Nami, Kaabo, Tiger, Mars. Потужність до 15000W, швидкість до 120 км/год. Консультація та підбір в Україні.',
+  description: 'Лише флагмани: Teverun, Inmotion, Nami, Kaabo, Tiger, Mars. Потужність до 15000W, швидкість до 120 км/год. Характеристики та огляди.',
   alternates: { canonical: '/' },
 };
 
@@ -59,7 +59,7 @@ export default async function HomePage() {
             </h1>
             <p className={styles.heroSubtitle}>
               Лише флагмани — топова конфігурація кожного бренду. Teverun, Inmotion, Nami, Kaabo, Tiger, Mars, Surron.
-              Консультація та підбір. Ціни орієнтовні, доставка по всій Україні.
+              Детальні характеристики та порівняння моделей.
             </p>
             <div className={styles.heroStats}>
               <div className={styles.stat}>
@@ -77,9 +77,6 @@ export default async function HomePage() {
             </div>
             <div className={styles.heroCTA}>
               <a href="#catalog" className="btn-primary">Переглянути каталог</a>
-              <a href="https://t.me/scootify_eco" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-                Консультація в Telegram
-              </a>
             </div>
           </div>
         </section>

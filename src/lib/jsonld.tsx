@@ -20,14 +20,7 @@ export function generateOrganizationSchema() {
       width: 1200,
       height: 630,
     },
-    description: 'Hyper електросамокати - найпотужніші серійні самокати у світі',
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+380772770006',
-      contactType: 'sales',
-      areaServed: 'UA',
-      availableLanguage: 'Ukrainian',
-    },
+    description: 'Характеристики та огляди hyper електросамокатів',
   };
 }
 
@@ -43,21 +36,9 @@ export function generateWebSiteSchema() {
 export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'WebSite',
     name: SITE_NAME,
     url: SITE_URL,
-    telephone: '+380772770006',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'UA',
-    },
-    priceRange: '$$$',
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '09:00',
-      closes: '21:00',
-    },
   };
 }
 
