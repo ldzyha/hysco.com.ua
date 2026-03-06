@@ -129,6 +129,34 @@ export function generateItemListSchema(
   };
 }
 
+export function generateBreadcrumbSchema(items: Array<{ name: string; href: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.href}`,
+    })),
+  };
+}
+
+export function generateFAQSchema(faqs: Array<{ question: string; answer: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function combineSchemas(...schemas: any[]) {
   return schemas;
