@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source "../../node_modules/@scootify/shared/src";
 
 /* ============================================================
    HYSCO globals — Only site-specific overrides and utilities.

@@ -25,21 +25,22 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "HYSCO | Hyper електросамокати - найпотужніші в Україні",
+    default: "HYSCO | Флагманські електросамокати — лише топ-конфігурації",
     template: "%s | HYSCO",
   },
   description:
-    "Hyper електросамокати від $1600 до $4300. Потужність до 15000W, швидкість до 120 км/год. Teverun, Inmotion, Nami, Kaabo, Mars. Доставка по Україні.",
+    "Лише флагмани: Teverun, Inmotion, Nami, Kaabo, Tiger, Mars. Потужність до 15000W, швидкість до 120 км/год. З'єднуємо вас з офіційними дистриб'юторами. Доставка по Україні.",
   keywords: [
     "електросамокат",
-    "hyper самокат",
+    "HYSCO",
+    "флагманський електросамокат",
     "потужний електросамокат",
     "Teverun",
     "Inmotion RS",
     "Nami Burn-E",
     "Kaabo Wolf King",
+    "Tiger",
     "купити електросамокат Україна",
-    "HYSCO",
   ],
   authors: [{ name: "HYSCO" }],
   creator: "HYSCO",
@@ -53,22 +54,22 @@ export const metadata: Metadata = {
     locale: "uk_UA",
     url: "https://hysco.com.ua",
     siteName: "HYSCO",
-    title: "HYSCO | Hyper електросамокати - найпотужніші в Україні",
+    title: "HYSCO | Флагманські електросамокати — лише топ-конфігурації",
     description:
-      "Hyper електросамокати від $1600 до $4300. Потужність до 15000W, швидкість до 120 км/год.",
+      "Лише флагмани: Teverun, Inmotion, Nami, Kaabo, Tiger, Mars. Потужність до 15000W, швидкість до 120 км/год.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "HYSCO - Hyper електросамокати",
+        alt: "HYSCO — флагманські електросамокати в Україні",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HYSCO | Hyper електросамокати",
-    description: "Потужність до 15000W, швидкість до 120 км/год.",
+    title: "HYSCO | Флагманські електросамокати",
+    description: "Потужність до 15000W, швидкість до 120 км/год. З'єднуємо вас з офіційними дистриб'юторами.",
     images: ["/og-image.jpg"],
   },
   robots: {
