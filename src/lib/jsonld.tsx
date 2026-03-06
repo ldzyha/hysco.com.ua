@@ -20,7 +20,7 @@ export function generateOrganizationSchema() {
       width: 1200,
       height: 630,
     },
-    description: 'Характеристики та огляди hyper електросамокатів',
+    description: 'HYSCO — хаб для підбору електросамокатів. Характеристики, огляди та з\'єднання з офіційними дистриб\'юторами.',
   };
 }
 
@@ -66,7 +66,7 @@ export function generateProductSchema(product: Product) {
         : 'https://schema.org/PreOrder',
       seller: {
         '@type': 'Organization',
-        name: SITE_NAME,
+        name: product.brand || SITE_NAME,
       },
     },
     ...(product.rating

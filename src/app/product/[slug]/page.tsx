@@ -147,9 +147,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <ProductConsultationCTA productName={product.name} productSlug={slug} />
 
             <GuaranteeBadges
-              warrantyMonths={product.warranty?.months || 6}
-              showShipping
-              preorderDays={product.preorder ? product.shippingDays : undefined}
+              badges={[
+                { icon: 'shieldCheck', iconColor: 'blue', text: 'Офіційна гарантія від дистриб\'ютора' },
+                { icon: 'truck', iconColor: 'blue', text: 'Доставка по всій Україні' },
+                ...(product.preorder && product.shippingDays ? [{ icon: 'clock' as const, iconColor: 'gold' as const, text: `Передзамовлення ~${product.shippingDays} днів` }] : []),
+              ]}
             />
           </div>
         </div>
